@@ -1,0 +1,66 @@
+/**
+ * Ward 3 - Location Data (Famous Locations)
+ * Contains 50 most famous/notable locations in Ward 3
+ */
+
+const ward3Locations = [
+  "Vadodara Railway Station",
+  "Central Bus Station Vadodara",
+  "M.S. University",
+  "MSU Head Office",
+  "MSU Boys Hostel",
+  "Delhi Public School",
+  "Bright Day School",
+  "Bright School GSEB",
+  "Cygnus World School",
+  "Hill Memorial High School",
+  "Rosary High School",
+  "Kendriya Vidyalaya No-2",
+  "Maharaja Ranjitsinh Gaekwad Institute Of Design",
+  "Edunova Science Higher Secondary School",
+  "Ambe Group of Schools",
+  "Ashoka Public School",
+  "Metro Hospital & Research Institute",
+  "Rhythm Heart Institute & Hospital",
+  "Dwarkesh Hospital",
+  "Sanjiv Hospital",
+  "Harni Multi-speciality Hospital",
+  "Hotel Suba Elite",
+  "Hotel Tulsi",
+  "Hotel Sargam",
+  "Hotel Yuvraj",
+  "ISCON Jan Mahal",
+  "Banyan Paradies Resort",
+  "BRG Haritage Resort & Restaurant",
+  "Nakshatra Banquet & Convention Center",
+  "Siddharth Annexe 1",
+  "Siddharth Square",
+  "Siddharth Landmark",
+  "Shree Siddheshwar Paradise",
+  "Shree Siddheshwar Pacific",
+  "Shree Siddheshwar Highlife",
+  "Shree Siddheshwar Hilarious",
+  "Orchid Luxuria",
+  "Orchid Platina",
+  "Orchid Skyrise",
+  "Orchid Greens",
+  "Shukan The Meridian",
+  "Shukan-Ii Tower-A-K",
+  "Saakar Splendora 1",
+  "Saakar Splendor-II",
+  "Gujarat Industrial Research & Development Agency",
+  "Postmaster General Office",
+  "HP Petrol Pump",
+  "Nayara Petrol Pump",
+  "Harni Military Basecamp",
+  "Faculty of Social Work (MSU)"
+];
+
+module.exports = {
+  wardNumber: 3,
+  wardName: "Ward 3",
+  zone: "north",
+  locations: ward3Locations,
+  totalLocations: ward3Locations.length,
+  note: "Contains 50 famous and notable locations from Ward 3"
+};

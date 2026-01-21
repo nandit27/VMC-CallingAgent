@@ -1,0 +1,66 @@
+/**
+ * Ward 10 - Location Data (Famous Locations)
+ * Extracted notable landmarks / institutions in Ward 10
+ */
+
+const ward10Locations = [
+  "ISCON Temple (Tandalja/Gotri Road)",
+  "Navrachana University (Bhayli)",
+  "Bright Day School (Vasna-Bhayli)",
+  "Sterling Multispeciality Hospital (Bhayli)",
+  "Nilamber Bellissimo (Bhayli)",
+  "Akshar Pavilion (Gotri-Bhayli Road)",
+  "Gujarat Engineering Research Institute (GERI)",
+  "St. Kabir Indian International School (Chapad)",
+  "ESIC Hospital (Gotri)",
+  "GMERS Medical College (Gotri)",
+  "BHEL Township",
+  "Sun Pharmaceutical Industries Ltd.",
+  "Zydus Cadila Research Center",
+  "Waves Club (Vasna-Bhayli)",
+  "The Emperor Mall (Vasna)",
+  "Darshanam Splendora (Vasna)",
+  "Earth Acropolis (Vasna-Bhayli)",
+  "Madhav Elite",
+  "Vraj Vihar Society",
+  "Amit Nagar Society (VIP Road area)",
+  "Gotri Co-Operative Housing Society",
+  "Shaishav School (Gotri)",
+  "Samanvay Hospital",
+  "Radha Soami Satsang Beas",
+  "Lilleria Signature",
+  "Nilamber Grandeur",
+  "Pratham Meadows",
+  "Spring Retreat",
+  "Vihav Trade Centre (VTC)",
+  "Broadway Commercial Hub",
+  "VMC Urban Primary Health Center",
+  "Bansal Super Market",
+  "Amaze Tennis Academy",
+  "Shree Swaminarayan High School",
+  "Ayodhya Nagar (GHB)",
+  "Indira Park Society",
+  "Tandalja Gam",
+  "Vasna Gam",
+  "Bhayli Gam",
+  "Akshardham Society",
+  "Ambika Nagar",
+  "Gokul Township",
+  "PMAY Urban Residency (Government Housing)",
+  "Kartikey Nagar",
+  "Tulshidham Society",
+  "Siddhivinayak Plaza",
+  "South West Central Mall",
+  "Atmajyot Vidhyalay",
+  "Jaldhara Hall",
+  "NTPC Guest House"
+];
+
+module.exports = {
+  wardNumber: 10,
+  wardName: "Ward 10",
+  zone: "west",
+  locations: ward10Locations,
+  totalLocations: ward10Locations.length,
+  note: "Curated list of notable locations in Ward 10"
+};

@@ -1,0 +1,66 @@
+/**
+ * Ward 6 - Location Data (Famous Locations)
+ * Extracted notable landmarks/institutions in Ward 6
+ */
+
+const ward6Locations = [
+  "Fatehpura / Fatepura",
+  "Yakutpura",
+  "Warasiya / Warasiya Gam",
+  "Kisanwadi (Gayatri Chowk)",
+  "Hathikhana (Market area)",
+  "Juni Ghadi",
+  "Sarsiya Gam",
+  "Pancha Pura",
+  "Emam Pura / Emampura",
+  "Khatri Wad",
+  "Ayodhya Nagar",
+  "Ashok Nagar",
+  "Gayatri Nagar",
+  "Vijay Nagar",
+  "Shastri Nagar",
+  "Jay Prakash Nagar (J P Nagar)",
+  "Laxmi Nagar",
+  "Khodiyar Nagar",
+  "Ambika Nagar Society",
+  "Daji Nagar",
+  "Dayal Nagar",
+  "Bakor Nagar",
+  "Ganesh Nagar",
+  "Purnima Nagar",
+  "Yogi Nagar",
+  "Mahavir Nagar",
+  "Sardar Nagar",
+  "Pramukh Swami Nagar",
+  "Hari Om Nagar",
+  "Saraswati Nagar",
+  "Vrundavan Township",
+  "Indralok Township",
+  "Balaji Township",
+  "Sanidhya Township",
+  "Gokuldham Society",
+  "Sindhu Park Society",
+  "Sant Kunvar Colony",
+  "Vasvani Colony",
+  "Vishwakarma Colony",
+  "Satya Vella Colony",
+  "Mahavat Faliya",
+  "Mitha Faliya",
+  "Patel Faliya",
+  "Mali Faliya",
+  "Genda Faliya",
+  "Suthar Faliya",
+  "Darban Faliya",
+  "Sardar Industrial Estate",
+  "Bhatuji Mandir / Bhole Sai",
+  "Warasiya Police Station Area"
+];
+
+module.exports = {
+  wardNumber: 6,
+  wardName: "Ward 6",
+  zone: "east",
+  locations: ward6Locations,
+  totalLocations: ward6Locations.length,
+  note: "Curated list of recognizable locations in Ward 6"
+};

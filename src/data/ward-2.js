@@ -1,0 +1,66 @@
+/**
+ * Ward 2 - Location Data (Famous Locations)
+ * Contains 50 most famous/notable locations in Ward 2
+ */
+
+const ward2Locations = [
+  "Four Point by Sheraton",
+  "Fatehgunj Head Post Office",
+  "Convent Of Jesus & Mary Girls High School",
+  "Church Of Our Lady Of The Forsaken",
+  "St. James Church",
+  "Gurudwara Guru Nanak Darbar",
+  "Shree Parsi Panchayat Vadodara",
+  "Navrachana School",
+  "Nutan Vidyalaya",
+  "Mar Gregorios Memorial School",
+  "Shree Saraswati Vidhyalaya",
+  "Our Lady of Pillar Hospital",
+  "Diva Hospital",
+  "Shubh Hospital",
+  "Grand Tulip Banquet & Lawn",
+  "Container Corporation Of India",
+  "Sama Indoor Sports Complex",
+  "Shell Petrol Pump",
+  "Indian Oil Petrol Pump",
+  "Hotel Aum Regency",
+  "Godrej Hall",
+  "Inspection Bungalow",
+  "Jivan Chetna Uma Vidhyalay",
+  "Adarsh Hindi Vidhyalay",
+  "The Buzz Sports",
+  "Time Square Tower-A-B",
+  "Time Square Tower -C",
+  "Industrial Shopping Center",
+  "Lilleria Avenue",
+  "Lilleria 162",
+  "Lilleria 419",
+  "Lilleria Aashiana",
+  "Lilleria Appartments",
+  "Lilleria Party Plot",
+  "Siddharth Annexe 4 (Bansal Mall)",
+  "Siddharth Landmark",
+  "Pancham Aristro",
+  "Pancham Imperia",
+  "Pancham Luxuria",
+  "Seven9 Imperia",
+  "Empire Flora",
+  "Empire Villa",
+  "Shreenathji Heights",
+  "Nexon Elite",
+  "Earth Ambrosia",
+  "Puja Vidhaya Vihar Society",
+  "Maharshi Arvind Primary School",
+  "Sir Sayjirao Gaikwad Hindi Primary School",
+  "Kristal Heights",
+  "Gyanoday Society"
+];
+
+module.exports = {
+  wardNumber: 2,
+  wardName: "Ward 2",
+  zone: "north",
+  locations: ward2Locations,
+  totalLocations: ward2Locations.length,
+  note: "Contains 50 famous and notable locations from Ward 2"
+};

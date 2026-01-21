@@ -1,0 +1,66 @@
+/**
+ * Ward 19 - Location Data (Famous Locations)
+ * Extracted notable landmarks / institutions in Ward 19
+ */
+
+const ward19Locations = [
+  "Makarpura Bus Depot",
+  "Makarpura Main Road",
+  "Tarsali Township",
+  "Vadadala Gam",
+  "Bhaliyapura Gam",
+  "Baroda Power Plant",
+  "Siemens Limited",
+  "Schaeffler India Limited",
+  "Podar World School Maneja",
+  "S.R.P.F Group 9. New Police Line",
+  "GEB Jambuva",
+  "Jambuva Division Office, MGVCL",
+  "Swaminarayan Gurukul School",
+  "Missionaries Of Charity",
+  "Dawat Food Resort",
+  "Hotel Sarvottam",
+  "Unity Petrol Pump",
+  "Ayodhya Township",
+  "Saraswati Township",
+  "Sarvoday Township",
+  "Unad Deep Township",
+  "Kuber Lifestyle",
+  "Darshanam Vista",
+  "Rosedale County",
+  "Ratnam Greenfield",
+  "Samruddhi Aanandam",
+  "Khodiyar Nagar",
+  "Indira Nagar",
+  "Narayan Nagar",
+  "Gayatri Nagar",
+  "Gokul Dham",
+  "Hotel Grand Darshan",
+  "Hotel Legend",
+  "Lal Bahadur Shastri School",
+  "New Era Primary School",
+  "Saint Basil School",
+  "Uma Vidyalaya",
+  "Akshar Public School",
+  "Somnath Mahadev Mandir",
+  "Koteshwar Mahadev Temple",
+  "The Barodians",
+  "Ratna Heaven society",
+  "Tulsi Vatika",
+  "Royal Residency",
+  "Akshar Residency",
+  "Indraprasth",
+  "Shivam Residency",
+  "Rajmani Society",
+  "Shree Siddheshwar Hill",
+  "Aatmiya Heights"
+];
+
+module.exports = {
+  wardNumber: 19,
+  wardName: "Ward 19",
+  zone: "south",
+  locations: ward19Locations,
+  totalLocations: ward19Locations.length,
+  note: "Curated list of prominent locations in Ward 19"
+};
