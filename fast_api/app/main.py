@@ -14,6 +14,7 @@ from app.services.location_service import resolve_location_from_text
 from app.services.duplicate_detection_service import detect_duplicates, find_similar_complaints
 from app.services.urgency_classification_service import classify_urgency
 from app.DB.mongo import db
+from app.api import auth, dashboard
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -33,6 +34,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include Routers
+app.include_router(auth.router, prefix="/api", tags=["Authentication"])
+app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])
 
 
 # ==================== Request/Response Models ====================
