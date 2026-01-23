@@ -11,6 +11,7 @@ package-lock.json
 .env.development.local
 .env.test.local
 .env.production.local
+*.local
 
 # Credentials & Secrets
 google-credentials.json
@@ -47,6 +48,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+pnpm-debug.log*
 
 # OS Files
 .DS_Store
@@ -59,20 +61,27 @@ Thumbs.db
 Desktop.ini
 
 # IDE & Editor Files
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
 *.swn
+*.sw?
 *~
 .project
 .settings/
 .classpath
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
 # Build & Distribution
 dist/
 build/
 out/
+dist-ssr/
 *.tsbuildinfo
 
 # Test Coverage
