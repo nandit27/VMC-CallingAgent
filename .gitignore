@@ -12,6 +12,10 @@ package-lock.json
 .env.test.local
 .env.production.local
 *.local
+db_dump.txt
+.env
+*.env
+
 
 # Credentials & Secrets
 google-credentials.json
@@ -19,6 +23,7 @@ google-credentials.json
 *.pem
 *.p12
 credentials.json
+fast_api/db_dump.txt
 
 # AI/ML Models (Heavy Files)
 my_complaint_model/
