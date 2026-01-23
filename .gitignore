@@ -98,3 +98,4 @@ temp/
 # System Files
 .env.backup
 .env.old
+__pycache__/

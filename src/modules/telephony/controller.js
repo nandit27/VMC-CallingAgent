@@ -6,7 +6,7 @@ const logger = require('../../utils/logger');
 const { CALL_STATES } = require('../../constants/callStates');
 const { getLanguageByDTMF, TWILIO_TO_LANGUAGE } = require('../../constants/languages');
 const speechService = require('../speech-processing/service');
-const complaintService = require('../complaint-management/service');
+const hybridComplaintService = require('../complaint-management/hybridService');
 
 // Store for tracking call state (replace with database in production)
 const callDataStore = new Map();
@@ -407,8 +407,8 @@ const processRecordingAsync = async (recordingUrl, recordingSid, callSid, langua
       language: speechResult.language.code
     });
 
-    // Step 2: Process through intelligence layers
-    console.log('🔄 Processing complaint through intelligence layers...\n');
+    // Step 2: Process through intelligence layers (Python + MongoDB)
+    console.log('🐍 Processing complaint through Python API + MongoDB storage...\n');
     
     const complaintData = {
       callSid,
@@ -420,25 +420,26 @@ const processRecordingAsync = async (recordingUrl, recordingSid, callSid, langua
       confidence: speechResult.confidence
     };
 
-    const processedComplaint = await complaintService.processComplaint(complaintData);
+    const processedComplaint = await hybridComplaintService.processComplaint(complaintData);
 
     // Display final result with summary
     console.log('\n' + '='.repeat(80));
-    console.log('✅ COMPLAINT PROCESSED SUCCESSFULLY');
+    console.log('✅ COMPLAINT PROCESSED & SAVED SUCCESSFULLY');
     console.log('='.repeat(80));
-    console.log(`🆔 Complaint ID: ${processedComplaint.complaint.complaintId}`);
-    console.log(`📋 Category: ${processedComplaint.complaint.categoryInfo.name} (${processedComplaint.complaint.category})`);
-    console.log(`   └─ Confidence: ${(processedComplaint.complaint.categoryInfo.confidence * 100).toFixed(1)}%`);
-    console.log(`   └─ Method: ${processedComplaint.complaint.categoryInfo.method}`);
-    console.log(`⚡ Urgency: ${processedComplaint.complaint.urgency.toUpperCase()}`);
-    console.log(`📍 Location: ${processedComplaint.complaint.location.landmark || 'Not found'}`);
-    console.log(`   └─ Ward: ${processedComplaint.complaint.location.wardNumber || 'N/A'}`);
-    console.log(`   └─ Zone: ${processedComplaint.complaint.location.zone || 'N/A'}`);
-    console.log(`   └─ Confidence: ${processedComplaint.complaint.location.confidence || 0}%`);
-    console.log(`🔄 Duplicate: ${processedComplaint.complaint.isDuplicate ? 'YES' : 'NO'}`);
-    if (processedComplaint.complaint.isDuplicate) {
-      console.log(`   └─ Similar to: ${processedComplaint.complaint.duplicateOf}`);
-      console.log(`   └─ Similarity: ${processedComplaint.complaint.similarityScore}%`);
+    console.log(`🆔 Complaint ID: ${processedComplaint.complaintId}`);
+    console.log(`💾 MongoDB ID: ${processedComplaint._id}`);
+    console.log(`📋 Category: ${processedComplaint.categoryInfo.name} (${processedComplaint.category})`);
+    console.log(`   └─ Confidence: ${(processedComplaint.categoryInfo.confidence * 100).toFixed(1)}%`);
+    console.log(`   └─ Method: ${processedComplaint.categoryInfo.method}`);
+    console.log(`⚡ Urgency: ${processedComplaint.urgency.level.toUpperCase()}`);
+    console.log(`📍 Location: ${processedComplaint.location.landmark || processedComplaint.location.extractedText || 'Not found'}`);
+    console.log(`   └─ Ward: ${processedComplaint.location.wardNumber || 'N/A'} (${processedComplaint.location.wardName || 'N/A'})`);
+    console.log(`   └─ Zone: ${processedComplaint.location.zone || 'N/A'}`);
+    console.log(`   └─ Confidence: ${processedComplaint.location.confidence || 0}%`);
+    console.log(`🔄 Duplicate: ${processedComplaint.duplicate.isDuplicate ? 'YES' : 'NO'}`);
+    if (processedComplaint.duplicate.isDuplicate) {
+      console.log(`   └─ Similar to: ${processedComplaint.duplicate.duplicateOf}`);
+      console.log(`   └─ Similarity: ${(processedComplaint.duplicate.similarityScore * 100).toFixed(1)}%`);
     }
     console.log(`⏱️  Processing Time: ${processedComplaint.processingTime}ms`);
     console.log('='.repeat(80));
@@ -446,13 +447,13 @@ const processRecordingAsync = async (recordingUrl, recordingSid, callSid, langua
     // Display complete JSON output
     console.log('\n📄 COMPLETE COMPLAINT JSON:');
     console.log('='.repeat(80));
-    console.log(JSON.stringify(processedComplaint.complaint, null, 2));
+    console.log(JSON.stringify(processedComplaint, null, 2));
     console.log('='.repeat(80) + '\n');
 
     // Store for confirmation endpoint
     callDataStore.set(callSid, {
       ...callDataStore.get(callSid),
-      complaint: processedComplaint.complaint,
+      complaint: processedComplaint,
       processingComplete: true
     });
 

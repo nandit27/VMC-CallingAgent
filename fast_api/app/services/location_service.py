@@ -1,9 +1,9 @@
-from location.normalizer import normalize_text
-from location.extractor import extract_location_candidates
-from db.area_repo import find_areas_by_exact_or_alias
-from location.matcher import fuzzy_match_areas
-from location.ranker import rank_area_candidates
-from location.resolver import resolve_location_decision
+from app.location.normalizer import normalize_text
+from app.location.extractor import extract_location_candidates
+from app.DB.area_repo import find_areas_by_exact_or_alias
+from app.location.matcher import fuzzy_match_areas
+from app.location.ranker import rank_area_candidates
+from app.location.resolver import resolve_location_decision
 
 
 def resolve_location_from_text(raw_text: str) -> dict:

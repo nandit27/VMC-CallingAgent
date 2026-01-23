@@ -1,5 +1,5 @@
 from typing import List, Dict
-from DB.mongo import areas_col
+from app.DB.mongo import areas_col
 
 
 def find_areas_by_exact_or_alias(candidates: List[str]) -> List[Dict]:

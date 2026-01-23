@@ -5,19 +5,35 @@ require('dotenv').config();
 
 const app = require('./app');
 const logger = require('./utils/logger');
-const mlService = require('./modules/ai-understanding/mlClassificationService');
-const wardLoader = require('./data/wardLocationLoader');
+const mongoConnection = require('./db/connection');
+const pythonApiClient = require('./integrations/python-api/client');
 
 const PORT = process.env.PORT || 3000;
 
-// Preload ML model (optional - speeds up first classification)
+// Initialize connections and services
 (async () => {
   try {
-    console.log('🔄 Preloading ML classification model...');
-    await mlService.preloadModel();
-    console.log('✅ ML model preloaded successfully');
+    // Connect to MongoDB
+    console.log('🔄 Connecting to MongoDB...');
+    await mongoConnection.connect();
+    console.log('✅ MongoDB connected successfully');
   } catch (error) {
-    console.warn('⚠️  ML model preload failed - will load on first use');
+    console.error('❌ MongoDB connection failed:', error.message);
+    console.warn('⚠️  Server will start but database operations will fail');
+  }
+
+  try {
+    // Check Python API health
+    console.log('🔄 Checking Python API connection...');
+    const pythonHealth = await pythonApiClient.healthCheck();
+    if (pythonHealth.status === 'healthy') {
+      console.log('✅ Python API is healthy');
+    } else {
+      console.warn('⚠️  Python API is not responding properly');
+    }
+  } catch (error) {
+    console.warn('⚠️  Python API health check failed - make sure Python server is running');
+    console.warn(`   Start Python API: cd fast_api && uvicorn app.main:app --reload`);
   }
 })();
 
@@ -33,50 +49,59 @@ const server = app.listen(PORT, () => {
   
   // Display status
   const hasGoogleCreds = !!process.env.GOOGLE_APPLICATION_CREDENTIALS;
-  const wardStats = wardLoader.getWardStats();
-  const modelInfo = mlService.getModelInfo();
+  const hasMongoDB = !!process.env.MONGODB_URI;
+  const pythonApiUrl = process.env.PYTHON_API_URL || 'http://localhost:8000';
   
-  console.log('\n' + '='.repeat(60));
-  console.log('🚀 SERVER STARTED SUCCESSFULLY');
-  console.log('='.repeat(60));
-  console.log(`📍 Port: ${PORT}`);
+  console.log('\n' + '='.repeat(70));
+  console.log('🚀 HYBRID ARCHITECTURE SERVER - STARTED SUCCESSFULLY');
+  console.log('='.repeat(70));
+  console.log(`📍 Node.js Port: ${PORT}`);
+  console.log(`🐍 Python API: ${pythonApiUrl}`);
   console.log(`🌐 Webhook: http://localhost:${PORT}/api/telephony/incoming-call`);
   console.log('');
-  console.log('🔧 INTELLIGENCE LAYERS:');
-  console.log(`   1️⃣  Translation: ${hasGoogleCreds ? 'Google Cloud ✅' : 'Google Cloud (No Creds) ⚠️'}`);
-  console.log(`   2️⃣  Classification: ML Model (${modelInfo.loaded ? 'Loaded ✅' : 'Not Loaded ⏳'})`);
-  console.log(`   3️⃣  Location: Ward-based fuzzy matching ✅`);
-  console.log(`   4️⃣  Duplicate: Rule-based + Similarity ✅`);
-  console.log(`   5️⃣  Urgency: Category-based + Keywords ✅`);
+  console.log('🏗️  ARCHITECTURE:');
+  console.log('   📞 Node.js  → Call Handling (Twilio)');
+  console.log('   🐍 Python   → Processing (Translation, Classification, Location)');
+  console.log('   💾 Node.js  → Database Storage (MongoDB)');
   console.log('');
-  console.log('📊 DATA LOADED:');
-  console.log(`   🏘️  Wards: ${wardStats.totalWards} wards`);
-  console.log(`   📍 Locations: ${wardStats.totalLocations} locations`);
-  console.log(`   🏷️  Categories: ${modelInfo.vmcCategories} VMC categories`);
-  console.log(`   🤖 Model Labels: ${modelInfo.totalLabels} labels mapped`);
+  console.log('🔧 SERVICES STATUS:');
+  console.log(`   🗄️  MongoDB: ${hasMongoDB ? 'Configured ✅' : 'Not Configured ⚠️'}`);
+  console.log(`   🐍 Python API: Check logs above`);
+  console.log(`   🎤 Google Cloud: ${hasGoogleCreds ? 'Configured ✅' : 'Not Configured ⚠️'}`);
   console.log('');
-  console.log(`🎤 Speech-to-Text: ${hasGoogleCreds ? 'Google Cloud ✅' : 'Not Configured ⚠️'}`);
-  if (!hasGoogleCreds) {
-    console.log('   💡 Set GOOGLE_APPLICATION_CREDENTIALS in .env for STT');
-  }
+  console.log('🔄 PROCESSING PIPELINE:');
+  console.log('   1️⃣  Translation       → Python API');
+  console.log('   2️⃣  Classification    → Python API (ML Model)');
+  console.log('   3️⃣  Location         → Python API (Fuzzy Matching)');
+  console.log('   4️⃣  Urgency          → Python API (Placeholder)');
+  console.log('   5️⃣  Duplicate Check  → Python API (Placeholder)');
+  console.log('   6️⃣  Save to DB       → Node.js (MongoDB)');
   console.log('');
-  console.log('🔗 Use ngrok to expose: ngrok http ' + PORT);
-  console.log('='.repeat(60) + '\n');
+  console.log('💡 QUICK START:');
+  console.log(`   • Start Python: cd fast_api && uvicorn app.main:app --reload`);
+  console.log(`   • Expose webhook: ngrok http ${PORT}`);
+  console.log(`   • Configure Twilio webhook with ngrok URL`);
+  console.log('');
+  console.log('='.repeat(70) + '\n');
 });
 
 // Graceful shutdown
-process.on('SIGTERM', () => {
-  logger.info('SIGTERM signal received: closing HTTP server');
-  server.close(() => {
+process.on('SIGTERM', async () => {
+  logger.info('SIGTERM signal received: closing connections');
+  server.close(async () => {
     logger.info('HTTP server closed');
+    await mongoConnection.close();
+    logger.info('MongoDB connection closed');
     process.exit(0);
   });
 });
 
-process.on('SIGINT', () => {
-  logger.info('SIGINT signal received: closing HTTP server');
-  server.close(() => {
+process.on('SIGINT', async () => {
+  logger.info('SIGINT signal received: closing connections');
+  server.close(async () => {
     logger.info('HTTP server closed');
+    await mongoConnection.close();
+    logger.info('MongoDB connection closed');
     process.exit(0);
   });
 });
