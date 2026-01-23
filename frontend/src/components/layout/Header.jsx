@@ -22,7 +22,7 @@ const Header = () => {
         <header className="flex justify-between items-center py-6 px-8 border-b border-gray-200 mb-6 bg-white/80 backdrop-blur-md sticky top-0 z-50">
 
             {/* Brand / Title */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/dashboard')}>
                 <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center text-primary">
                     <Building2 size={24} />
                 </div>
@@ -31,6 +31,28 @@ const Header = () => {
                     <p className="text-xs text-muted">Citizen Complaint Dashboard</p>
                 </div>
             </div>
+
+            {/* Navigation Links */}
+            <nav className="hidden md:flex items-center gap-1 bg-gray-100/50 p-1 rounded-xl">
+                <button
+                    onClick={() => navigate('/dashboard')}
+                    className="px-4 py-2 text-sm font-bold text-gray-600 hover:text-primary hover:bg-white rounded-lg transition-all"
+                >
+                    Dashboard
+                </button>
+                <button
+                    onClick={() => navigate('/departments')}
+                    className="px-4 py-2 text-sm font-bold text-gray-600 hover:text-primary hover:bg-white rounded-lg transition-all"
+                >
+                    Departments
+                </button>
+                <button
+                    onClick={() => navigate('/complaints')}
+                    className="px-4 py-2 text-sm font-bold text-gray-600 hover:text-primary hover:bg-white rounded-lg transition-all"
+                >
+                    Complaint List
+                </button>
+            </nav>
 
             {/* Right Section */}
             <div className="flex items-center gap-6">

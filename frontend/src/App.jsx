@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
 import LoginPage from './pages/LoginPage';
+import Departments from './pages/Departments';
+import Complaints from './pages/Complaints';
 
 // Protect Route Wrapper (Simple check for existence of token)
 const ProtectedRoute = ({ children }) => {
@@ -24,6 +26,27 @@ function App() {
             <ProtectedRoute>
               <Layout>
                 <Dashboard />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/departments"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Departments />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/complaints"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Complaints />
               </Layout>
             </ProtectedRoute>
           }

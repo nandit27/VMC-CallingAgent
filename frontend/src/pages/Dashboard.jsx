@@ -49,7 +49,7 @@ const Dashboard = () => {
                     citizenName: c.phoneNumber || 'Citizen',
                     issueType: c.categoryInfo?.name || c.category || 'General',
                     description: c.translatedText || c.originalText || 'No description provided',
-                    location: c.location?.wardName ? `${c.location.wardName}, Ward ${c.location.wardNumber}` : (c.location?.address || 'Unknown Location'),
+                    location: c.location?.wardNumber ? `Zone ${c.location.zone || 'Unknown'}, Ward ${c.location.wardNumber}` : (c.location?.address || 'Unknown Location'),
                     status: c.status ? String(c.status).charAt(0).toUpperCase() + String(c.status).slice(1) : 'Pending',
                     severity: urgencyStr.charAt(0).toUpperCase() + urgencyStr.slice(1),
                     timestamp: c.createdAt ? new Date(c.createdAt).toLocaleString() : (c.timestamp ? new Date(c.timestamp).toLocaleString() : 'Just now')
@@ -175,27 +175,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* Department Cards */}
-            <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                    Departments Overview
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {Array.isArray(stats.byCategory) && stats.byCategory.map((dept) => (
-                        <DepartmentCard
-                            key={dept.code || Math.random()}
-                            name={dept.name || 'Unknown'}
-                            code={dept.code}
-                            count={dept.count || 0}
-                            isActive={selectedCategory === dept.code}
-                            onClick={(c) => setSelectedCategory(c === selectedCategory ? null : c)}
-                        />
-                    ))}
-                    {Array.isArray(stats.byCategory) && stats.byCategory.length === 0 && !loading && (
-                        <p className="text-gray-500 text-sm italic col-span-full text-center">No departments found.</p>
-                    )}
-                </div>
-            </div>
+
 
             {/* Complaints Grid */}
             <div>

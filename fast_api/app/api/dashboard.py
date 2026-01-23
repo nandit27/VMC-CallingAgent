@@ -11,17 +11,32 @@ async def get_dashboard_data(category: str = None):
     Optional 'category' query param filters the complaint list.
     """
     try:
+        from app.data.department_mapping import DEPARTMENT_MAPPING, CATEGORY_TO_DEPARTMENT
+        
+        # Determine categories filter
+        # 'category' param is now treated as 'Department Name' or 'Category Name'
+        # If it matches a Department, we include ALL its categories.
+        # If it matches a specific Category, we include just that.
+        
+        target_categories = []
+        is_department_filter = False
+        
+        if category:
+            if category in DEPARTMENT_MAPPING:
+                target_categories = DEPARTMENT_MAPPING[category]
+                is_department_filter = True
+            else:
+                target_categories = [category]
+                
         # Build query filter
         filter_query = {}
-        if category:
-            filter_query["category"] = category
+        if target_categories:
+            filter_query["category"] = {"$in": target_categories}
 
-        # Get total count (Global)
-        total_complaints = complaints_col.count_documents({})
+        # Get total count (Filtered)
+        total_complaints = complaints_col.count_documents(filter_query)
         
         # Get recent complaints (Filtered)
-        # Get recent complaints (Filtered)
-        # Fetch more to allow for custom sorting in Python
         recent_complaints_cursor = complaints_col.find(
             filter_query, 
             {"_id": 0}
@@ -30,7 +45,6 @@ async def get_dashboard_data(category: str = None):
         recent_complaints = list(recent_complaints_cursor)
         
         # Custom Sort: High/Critical Priority First
-        # Map urgency level to numeric score (Higher is more urgent)
         urgency_score = {
             "critical": 3,
             "high": 2,
@@ -42,63 +56,61 @@ async def get_dashboard_data(category: str = None):
             level = complaint.get("urgency", {}).get("level", "medium").lower()
             return (urgency_score.get(level, 0), complaint.get("created_at", ""))
 
-        # Sort descending (Higher score first, then newer date)
         recent_complaints.sort(key=get_sort_key, reverse=True)
-        
-        # Limit to 50 after sorting
         recent_complaints = recent_complaints[:50]
         
-        # Calculate stats (Global)
+        # Calculate stats (Filtered)
+        def count_with_filter(status_val):
+            q = filter_query.copy()
+            q["status"] = status_val
+            return complaints_col.count_documents(q)
+
         status_counts = {
-            "Open": complaints_col.count_documents({"status": "Open"}),
-            "Resolved": complaints_col.count_documents({"status": "Resolved"}),
-            "Pending": complaints_col.count_documents({"status": "Pending"})
+            "Open": count_with_filter("Open"),
+            "Resolved": count_with_filter("Resolved"),
+            "Pending": count_with_filter("Pending")
         }
 
-        # Calculate Category Counts (Global Aggregation)
+        # Calculate Department Counts (Aggregation)
+        # 1. Get raw category counts
         pipeline = [
             {"$group": {"_id": "$category", "count": {"$sum": 1}}}
         ]
         category_counts_cursor = complaints_col.aggregate(pipeline)
+        category_counts_map = {item["_id"]: item["count"] for item in category_counts_cursor if item["_id"]}
         
-        # Map counts by code
-        counts_map = {item["_id"]: item["count"] for item in category_counts_cursor if item["_id"]}
-
-        # Fetch Reference Departments from DB
-        from app.DB.mongo import db
-        dept_col = db["departments"]
-        all_departments = list(dept_col.find({}, {"_id": 0}))
-        
-        # If departments collection is empty (fallback), build from aggregation
-        if not all_departments:
-             category_stats = [{"code": k, "name": k.replace("_", " ").title(), "count": v} for k, v in counts_map.items()]
-        else:
-            # Build list with counts (0 if missing)
-            category_stats = []
-            for dept in all_departments:
-                code = dept.get("code")
-                category_stats.append({
-                    "code": code,
-                    "name": dept.get("name"),
-                    "count": counts_map.get(code, 0)
-                })
+        # 2. Aggregate into Departments
+        department_stats = []
+        for dept_name, cats in DEPARTMENT_MAPPING.items():
+            count = 0
+            for cat in cats:
+                count += category_counts_map.get(cat, 0)
             
-            # Optional: Append categories found in complaints butNOT in department list?
-            # User requested specific list, so we might skip this or append as "Other"
-            # For now, sticking strictly to the 18 departments as requested.
+            department_stats.append({
+                "code": dept_name, # Using Name as Code for frontend compatibility
+                "name": dept_name,
+                "count": count,
+                "categories": cats # Optional: send child categories if needed
+            })
+            
+        # Sort departments by count desc
+        department_stats.sort(key=lambda x: x["count"], reverse=True)
 
-        # Calculate 7-Day Activity Trend
+        # Calculate 7-Day Activity Trend (Filtered)
         from datetime import datetime, timedelta
         
-        # Last 7 days counting today
         today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
         seven_days_ago = today - timedelta(days=6)
         
+        trend_match = {
+            "created_at": {"$gte": seven_days_ago}
+        }
+        if target_categories:
+            trend_match["category"] = {"$in": target_categories}
+
         trend_pipeline = [
             {
-                "$match": {
-                    "created_at": {"$gte": seven_days_ago}
-                }
+                "$match": trend_match
             },
             {
                 "$group": {
@@ -114,12 +126,10 @@ async def get_dashboard_data(category: str = None):
         trend_cursor = complaints_col.aggregate(trend_pipeline)
         trend_data_map = {item["_id"]: item["count"] for item in trend_cursor}
         
-        # Fill zero values for missing days
         activity_trend = []
         for i in range(7):
             date_obj = seven_days_ago + timedelta(days=i)
             date_str = date_obj.strftime("%Y-%m-%d")
-            # Format day name (e.g., "Mon", "Tue")
             day_name = date_obj.strftime("%a")
             
             activity_trend.append({
@@ -132,12 +142,13 @@ async def get_dashboard_data(category: str = None):
             "stats": {
                 "total": total_complaints,
                 "by_status": status_counts,
-                "by_category": category_stats,
+                "by_category": department_stats, # Renaming in frontend might be needed, but 'by_category' is what frontend expects
                 "activity_trend": activity_trend 
             },
             "recent_complaints": recent_complaints,
             "filter": {
-                "category": category
+                "category": category, # Echo back the input
+                "is_department": is_department_filter
             }
         }
         
@@ -180,3 +191,16 @@ async def resolve_complaint(complaint_id: str):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error resolving complaint: {str(e)}")
+
+@router.get("/admin/complaints")
+async def get_all_complaints():
+    """
+    Fetch ALL complaints for the detailed list view.
+    Sorted by newest first.
+    """
+    try:
+        cursor = complaints_col.find({}, {"_id": 0}).sort("created_at", -1)
+        complaints = list(cursor)
+        return {"complaints": complaints}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching complaints: {str(e)}")
