@@ -1,11 +1,12 @@
 from fastapi import APIRouter, HTTPException
 from app.DB.mongo import complaints_col
 from typing import List, Dict, Any
+from datetime import datetime, timedelta
 
 router = APIRouter()
 
 @router.get("/admin/dashboard")
-async def get_dashboard_data(category: str = None):
+async def get_dashboard_data(category: str = None, period: str = "weekly"):
     """
     Fetch dashboard data: stats and recent complaints.
     Optional 'category' query param filters the complaint list.
@@ -54,7 +55,11 @@ async def get_dashboard_data(category: str = None):
         
         def get_sort_key(complaint):
             level = complaint.get("urgency", {}).get("level", "medium").lower()
-            return (urgency_score.get(level, 0), complaint.get("created_at", ""))
+            created_at = complaint.get("created_at", "")
+            # Ensure created_at is comparable (convert to string if datetime)
+            if hasattr(created_at, 'isoformat'):
+                created_at = created_at.isoformat()
+            return (urgency_score.get(level, 0), str(created_at))
 
         recent_complaints.sort(key=get_sort_key, reverse=True)
         recent_complaints = recent_complaints[:50]
@@ -96,63 +101,129 @@ async def get_dashboard_data(category: str = None):
         # Sort departments by count desc
         department_stats.sort(key=lambda x: x["count"], reverse=True)
 
-        # Calculate 7-Day Activity Trend (Filtered)
-        from datetime import datetime, timedelta
-        
-        today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-        seven_days_ago = today - timedelta(days=6)
-        
-        trend_match = {
-            "created_at": {"$gte": seven_days_ago}
-        }
-        if target_categories:
-            trend_match["category"] = {"$in": target_categories}
-
-        trend_pipeline = [
-            {
-                "$match": trend_match
-            },
-            {
-                "$group": {
-                    "_id": {
-                        "$dateToString": {"format": "%Y-%m-%d", "date": "$created_at"}
-                    },
-                    "count": {"$sum": 1}
-                }
-            },
-            {"$sort": {"_id": 1}}
-        ]
-        
-        trend_cursor = complaints_col.aggregate(trend_pipeline)
-        trend_data_map = {item["_id"]: item["count"] for item in trend_cursor}
+        # Calculate Activity Trend based on Period
+        # Default to 'weekly' if not specified
+        period = period.lower() if period else 'weekly'
         
         activity_trend = []
-        for i in range(7):
-            date_obj = seven_days_ago + timedelta(days=i)
-            date_str = date_obj.strftime("%Y-%m-%d")
-            day_name = date_obj.strftime("%a")
+        
+        if period == 'monthly':
+            # Last 12 Months
+            # We want to group by Year-Month (YYYY-MM)
+            today = datetime.now()
+            # Start from 11 months ago to cover a full 12-month window including current month
+            # Or simplier: just get dates > 1 year ago
+            one_year_ago = today - timedelta(days=365)
             
-            activity_trend.append({
-                "date": date_str,
-                "name": day_name,
-                "count": trend_data_map.get(date_str, 0)
-            })
+            trend_match = {
+                 "created_at": {"$gte": one_year_ago}
+            }
+            if target_categories:
+                trend_match["category"] = {"$in": target_categories}
+
+            trend_pipeline = [
+                { "$match": trend_match },
+                {
+                    "$group": {
+                        "_id": { "$dateToString": { "format": "%Y-%m", "date": "$created_at" } },
+                        "count": { "$sum": 1 }
+                    }
+                },
+                { "$sort": { "_id": 1 } }
+            ]
+            
+            trend_cursor = complaints_col.aggregate(trend_pipeline)
+            trend_data_map = {item["_id"]: item["count"] for item in trend_cursor}
+            
+            # Generate last 12 months list for filling gaps
+            # Logic: Iterate from 11 months ago to now
+            current_month = today.replace(day=1)
+            for i in range(11, -1, -1):
+                # Calculate past month
+                # safe logic: subtracting days is tricky for months. 
+                # Better: (Year, Month) tuples
+                # Simple approx: today - i * 30 days usually works for 'recent' logic, 
+                # but exact months are better. 
+                
+                # Using relativedelta is best but standard lib fix:
+                # Construct date:
+                d = today
+                total_months = d.month - 1 - i
+                
+                # math to handle year rollback
+                y = d.year + (total_months // 12)
+                m = (total_months % 12) + 1
+                
+                month_str = f"{y}-{m:02d}"
+                # Display name: "Jan", "Feb"
+                month_obj = datetime(y, m, 1)
+                month_name = month_obj.strftime("%b")
+                
+                activity_trend.append({
+                    "date": month_str,
+                    "name": month_name, 
+                    "count": trend_data_map.get(month_str, 0)
+                })
+
+        else:
+            # Default: Weekly (Last 7 Days)
+            today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+            seven_days_ago = today - timedelta(days=6)
+            
+            trend_match = {
+                "created_at": {"$gte": seven_days_ago}
+            }
+            if target_categories:
+                trend_match["category"] = {"$in": target_categories}
+
+            trend_pipeline = [
+                {
+                    "$match": trend_match
+                },
+                {
+                    "$group": {
+                        "_id": {
+                            "$dateToString": {"format": "%Y-%m-%d", "date": "$created_at"}
+                        },
+                        "count": {"$sum": 1}
+                    }
+                },
+                {"$sort": {"_id": 1}}
+            ]
+            
+            trend_cursor = complaints_col.aggregate(trend_pipeline)
+            trend_data_map = {item["_id"]: item["count"] for item in trend_cursor}
+            
+            activity_trend = []
+            for i in range(7):
+                date_obj = seven_days_ago + timedelta(days=i)
+                date_str = date_obj.strftime("%Y-%m-%d")
+                day_name = date_obj.strftime("%a")
+                
+                activity_trend.append({
+                    "date": date_str,
+                    "name": day_name,
+                    "count": trend_data_map.get(date_str, 0)
+                })
 
         return {
             "stats": {
                 "total": total_complaints,
                 "by_status": status_counts,
-                "by_category": department_stats, # Renaming in frontend might be needed, but 'by_category' is what frontend expects
+                "by_category": department_stats, 
                 "activity_trend": activity_trend 
             },
             "recent_complaints": recent_complaints,
             "filter": {
-                "category": category, # Echo back the input
-                "is_department": is_department_filter
+                "category": category, 
+                "is_department": is_department_filter,
+                "period": period
             }
         }
         
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Error fetching dashboard data: {str(e)}")
 
 from bson import ObjectId

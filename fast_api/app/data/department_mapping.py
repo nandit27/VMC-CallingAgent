@@ -6,7 +6,7 @@ DEPARTMENT_MAPPING = {
         "Road And Footpath", "Monsoon Complaints", "Drainage Project", "Drainage And Storm Drain",
         "ROAD", "DRAINAGE" 
     ],
-    "Water Supply Department": ["Water Supply", "WATER_SUPPLY"],
+    "Water Supply Department": ["Water Supply"],
     "Electrical / Lighting Department": ["Street Light"],
     "Solid Waste Management Department": [
         "RRR Collection Van", "Garbage And Cleanliness", "E Waste", "Door To Door Garbage",

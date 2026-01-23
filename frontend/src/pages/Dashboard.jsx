@@ -5,6 +5,7 @@ import ComplaintCard from '../components/dashboard/ComplaintCard';
 import DepartmentCard from '../components/dashboard/DepartmentCard';
 import ActivityChart from '../components/dashboard/ActivityChart';
 
+
 // Map category codes to display names - Fallback only
 // The API now returns the name dynamically
 const CATEGORY_NAMES_FALLBACK = {
@@ -22,21 +23,27 @@ const Dashboard = () => {
         activityTrend: []
     });
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [chartPeriod, setChartPeriod] = useState('weekly'); // 'weekly' or 'monthly'
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchDashboardData(selectedCategory);
-    }, [selectedCategory]);
+        fetchDashboardData(selectedCategory, chartPeriod);
+    }, [selectedCategory, chartPeriod]);
 
-    const fetchDashboardData = async (category = null) => {
+    const fetchDashboardData = async (category = null, period = 'weekly') => {
         setLoading(true);
         try {
-            const query = category ? `?category=${category}` : '';
-            const response = await fetch(`/api/admin/dashboard${query}`);
+            const queryParams = new URLSearchParams();
+            if (category) queryParams.append('category', category);
+            if (period) queryParams.append('period', period);
+
+            const response = await fetch(`/api/admin/dashboard?${queryParams.toString()}`);
             if (!response.ok) throw new Error('Failed to fetch data');
 
             const data = await response.json();
+            // ... (rest of transformation logic)
+            // ...
 
             // Transform complaints
             const mappedComplaints = (data.recent_complaints || []).map(c => {
@@ -75,6 +82,9 @@ const Dashboard = () => {
             setLoading(false);
         }
     };
+
+    // ... (rest of methods)
+
 
     const handleResolve = async (id) => {
         try {
@@ -158,22 +168,16 @@ const Dashboard = () => {
 
             {/* Charts & Analytics */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2 h-80">
-                    <ActivityChart data={stats.activityTrend || []} />
-                </div>
-                <div className="lg:col-span-1 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-6 text-white flex flex-col justify-center relative overflow-hidden h-80">
-                    {/* Simplified Banner / Summary Card */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="relative z-10">
-                        <h3 className="text-xl font-bold mb-2">Automated AI Agent</h3>
-                        <p className="text-blue-100 mb-6 text-sm">Handling citizen calls 24/7 with real-time classification and routing.</p>
-                        <div className="flex items-center gap-3">
-                            <div className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium backdrop-blur-sm">Active</div>
-                            <div className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium backdrop-blur-sm">v1.2.0</div>
-                        </div>
-                    </div>
+                <div className="lg:col-span-3 h-80">
+                    <ActivityChart
+                        data={stats.activityTrend || []}
+                        period={chartPeriod}
+                        onPeriodChange={setChartPeriod}
+                    />
                 </div>
             </div>
+
+
 
 
 
