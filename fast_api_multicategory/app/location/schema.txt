@@ -1,0 +1,48 @@
+zones collection:
+{
+  "_id": ObjectId("..."),
+  "zone_id": "E",
+  "zone_name": "East Zone",
+  "description": "Eastern administrative zone",
+  "is_active": true
+}
+
+
+wards collection:
+{
+  "_id": ObjectId("..."),
+  "ward_id": 1,
+  "ward_name": "Ward 1",
+  "zone_id": "E",
+  "is_active": true
+}
+
+
+areas collection:
+
+
+{
+  "_id": ObjectId("..."),
+
+  "area_id": "A101",
+  "area_name": "Shivaji Nagar",
+
+  "ward_id": 1,
+  "zone_id": "E",
+
+  "aliases": [
+    "shivaji nagar",
+    "shivaji ngr",
+    "shivaji nager",
+    "shivaji nagr"
+  ],
+
+  "is_active": true,
+
+  "metadata": {
+    "source": "municipal_gazetteer",
+    "last_updated": "2026-01-01"
+  }
+}
+
+
