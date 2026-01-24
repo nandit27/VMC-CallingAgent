@@ -16,6 +16,7 @@ A comprehensive AI-powered system for the Vadodara Municipal Corporation (VMC) t
 - **Speech-to-Text**: Transcription of user complaints.
 - **Multilingual Support**: Handling Gujarati, Hindi, and English.
 - **Auto-Registration**: Direct insertion of voiced complaints into the database.
+- **SMS Confirmation**: Instant SMS notification sent to the caller with their unique Complaint ID for tracking.
 
 ## 🛠 Type Stack
 
@@ -36,7 +37,7 @@ A comprehensive AI-powered system for the Vadodara Municipal Corporation (VMC) t
 
 ### Voice Service (Telephony)
 - **Runtime**: Node.js
-- **Telephony**: Twilio Voice API
+- **Telephony**: Twilio Voice API & Messaging API (SMS)
 - **AI Modules**: Custom speech processing modules (in `src`)
 
 
@@ -89,4 +90,3 @@ Create a `.env` file in the root or respective folders with the following keys:
 - `MONGO_URI`: Your MongoDB connection string.
 - `TWILIO_ACCOUNT_SID`: (For Voice Agent)
 - `TWILIO_AUTH_TOKEN`: (For Voice Agent)
-- 
