@@ -4,6 +4,7 @@ import StatsCard from '../components/dashboard/StatsCard';
 import ComplaintCard from '../components/dashboard/ComplaintCard';
 import DepartmentCard from '../components/dashboard/DepartmentCard';
 import ActivityChart from '../components/dashboard/ActivityChart';
+import ZoneWiseChart from '../components/dashboard/ZoneWiseChart';
 
 
 // Map category codes to display names - Fallback only
@@ -19,7 +20,9 @@ const Dashboard = () => {
         pending: 0,
         resolved: 0,
         highPriority: 0,
+        highPriority: 0,
         byCategory: [],
+        byZone: null,
         activityTrend: []
     });
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -72,6 +75,7 @@ const Dashboard = () => {
                 resolved: data.stats?.by_status?.Resolved || 0,
                 highPriority: mappedComplaints.filter(c => String(c.severity).toLowerCase() === 'high').length,
                 byCategory: Array.isArray(data.stats?.by_category) ? data.stats.by_category : [],
+                byZone: data.stats?.by_zone || null,
                 activityTrend: data.stats?.activity_trend || []
             });
 
@@ -227,6 +231,41 @@ const Dashboard = () => {
                         ))}
                     </div>
                 )}
+            </div>
+
+            {/* Zone Wise Chart */}
+            <div className="mt-8">
+                <ZoneWiseChart data={(() => {
+                    if (stats.byZone) {
+                        // Use backend aggregated data
+                        return Object.keys(stats.byZone).map(zoneKey => ({
+                            name: zoneKey,
+                            complaints: stats.byZone[zoneKey]
+                        }));
+                    }
+
+                    // Fallback to client-side calc if backend data missing
+                    const zoneCounts = {
+                        'Zone North': 0,
+                        'Zone South': 0,
+                        'Zone East': 0,
+                        'Zone West': 0
+                    };
+
+                    complaints.forEach(c => {
+                        const loc = c.location.toLowerCase();
+                        if (loc.includes('north')) zoneCounts['Zone North']++;
+                        else if (loc.includes('south')) zoneCounts['Zone South']++;
+                        else if (loc.includes('east')) zoneCounts['Zone East']++;
+                        else if (loc.includes('west')) zoneCounts['Zone West']++;
+                        // Complaints without specific zone keywords are ignored for this specific chart
+                    });
+
+                    return Object.keys(zoneCounts).map(zone => ({
+                        name: zone,
+                        complaints: zoneCounts[zone]
+                    }));
+                })()} />
             </div>
         </div>
     );

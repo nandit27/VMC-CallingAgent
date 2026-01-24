@@ -101,6 +101,37 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
         # Sort departments by count desc
         department_stats.sort(key=lambda x: x["count"], reverse=True)
 
+        # Calculate Zone Counts (Dynamic from DB)
+        # Group by location.zone (assuming schema stores it there)
+        # We need to map DB values (e.g. "East", "east", "Zone East") to standardized keys
+        zone_pipeline = [
+            {"$match": filter_query},
+            {"$group": {"_id": "$location.zone", "count": {"$sum": 1}}}
+        ]
+        zone_cursor = complaints_col.aggregate(zone_pipeline)
+        
+        # Standardize to 4 main zones
+        zone_stats = {
+            "Zone North": 0,
+            "Zone South": 0,
+            "Zone East": 0,
+            "Zone West": 0
+        }
+        
+        for item in zone_cursor:
+            raw_zone = str(item.get("_id", "")).lower()
+            count = item.get("count", 0)
+            
+            if "north" in raw_zone:
+                zone_stats["Zone North"] += count
+            elif "south" in raw_zone:
+                zone_stats["Zone South"] += count
+            elif "east" in raw_zone:
+                zone_stats["Zone East"] += count
+            elif "west" in raw_zone:
+                zone_stats["Zone West"] += count
+            # Ignore others/unknowns for the chart per requirement
+
         # Calculate Activity Trend based on Period
         # Default to 'weekly' if not specified
         period = period.lower() if period else 'weekly'
@@ -210,7 +241,9 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
             "stats": {
                 "total": total_complaints,
                 "by_status": status_counts,
+                "by_status": status_counts,
                 "by_category": department_stats, 
+                "by_zone": zone_stats,
                 "activity_trend": activity_trend 
             },
             "recent_complaints": recent_complaints,

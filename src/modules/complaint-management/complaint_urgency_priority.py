@@ -11,22 +11,32 @@ class ComplaintUrgencyPriority:
     def __init__(self):
         # Priority levels: 1=Critical, 2=High, 3=Medium, 4=Low
         self.category_priorities = {
-            'FIRE': 1,
-            'MEDICAL_EMERGENCY': 1,
-            'GAS_LEAK': 1,
-            'BUILDING_COLLAPSE': 1,
-            'FLOOD': 1,
-            'ELECTRICAL_HAZARD': 1,
-            'WATER_BURST': 2,
-            'SEWAGE_OVERFLOW': 2,
-            'ROAD_ACCIDENT': 2,
-            'TREE_FALLEN': 2,
-            'POWER_OUTAGE': 3,
-            'WATER_SUPPLY': 3,
-            'ROAD_MAINTENANCE': 4,
-            'GARBAGE_COLLECTION': 4,
-            'STREET_LIGHT': 4,
-            'PLUMBER': 4,
+            # Critical (1) - Life Safety & Basic Necessities
+            'EMERGENCY_DISASTER': 1,        # Emergency & Disaster Management Department
+            'MEDICAL_SERVICES': 1,          # Medical Services Department
+            'WATER_SUPPLY': 1,              # Water Supply Department
+            'GAS_UTILITY': 1,               # Gas & Utility Services Department
+
+            # High (2) - Health & Sanitation
+            'ELECTRICAL_LIGHTING': 2,       # Electrical / Lighting Department
+            'SOLID_WASTE': 2,               # Solid Waste Management Department
+            'SANITATION': 2,                # Sanitation & Public Convenience Department
+            'PUBLIC_HEALTH': 2,             # Public Health Department
+
+            # Medium (3) - Infrastructure & Mobility
+            'ENGINEERING_INFRASTRUCTURE': 3, # Engineering / Infrastructure Department
+            'TRANSPORT': 3,                 # Transport Department
+            'ANIMAL_CONTROL': 3,            # Animal Control / Veterinary Department
+
+            # Low (4) - Administration & Planning
+            'TOWN_PLANNING': 4,             # Town Planning / Encroachment Department
+            'HOUSING_URBAN': 4,             # Housing & Urban Development Department
+            'GARDEN_RECREATION': 4,         # Garden & Recreation Department
+            'CIVIC_ADMINISTRATION': 4,      # Civic Services / Administration Department
+            'SMART_CITY_IT': 4,             # Smart City / IT Department
+            'FINANCE_BUDGET': 4,            # Finance & Budget Department
+            'SOCIAL_WELFARE': 4,            # Social Welfare / Health Schemes Department
+            
             'OTHER': 4
         }
         

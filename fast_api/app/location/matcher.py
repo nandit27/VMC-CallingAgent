@@ -1,5 +1,15 @@
 from typing import List, Dict
-from rapidfuzz import fuzz
+import logging
+
+logger = logging.getLogger(__name__)
+
+try:
+    from rapidfuzz import fuzz
+    RAPIDFUZZ_AVAILABLE = True
+except ImportError:
+    logger.warning("rapidfuzz not found. Location matching will use basic string matching.")
+    RAPIDFUZZ_AVAILABLE = False
+    fuzz = None
 
 
 def score_candidate_against_area(candidate: str, area_doc: Dict) -> float:
@@ -8,6 +18,25 @@ def score_candidate_against_area(candidate: str, area_doc: Dict) -> float:
     and an area document (name + aliases).
     """
     scores = []
+
+    if not RAPIDFUZZ_AVAILABLE:
+        # Basic fallback: exact match or substring
+        candidate_lower = candidate.lower()
+        name_lower = area_doc["area_name"].lower()
+        
+        if candidate_lower == name_lower:
+            return 100.0
+            
+        # Check aliases exact match
+        for alias in area_doc.get("aliases", []):
+            if candidate_lower == alias.lower():
+                return 100.0
+                
+        # Partial match
+        if name_lower in candidate_lower or candidate_lower in name_lower:
+            return 80.0
+            
+        return 0.0
 
     # Compare with canonical area name
     scores.append(fuzz.token_set_ratio(candidate, area_doc["area_name"].lower()))
