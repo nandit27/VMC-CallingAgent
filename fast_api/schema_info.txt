@@ -1,0 +1,19 @@
+=== Database Schema Exploration ===
+Collections: ['wards', 'departments', 'complaints', 'categories', 'areas', 'zones']
+
+--- 'departments' Collection ---
+Sample Department Document:
+{'_id': ObjectId('6973a1d33b973b375fecaa9a'), 'code': 'ENGINEERING', 'name': 'Engineering / Infrastructure Department', 'category_ids': [18, 49, 19, 38, 1, 3, 21]}
+Category IDs found: [18, 49, 19, 38, 1, 3, 21] (Type: <class 'list'>)
+First Category ID: 18 (Type: <class 'int'>)
+Resovled Category Document:
+None
+
+--- 'categories' Collection ---
+Sample Category Document:
+{'_id': ObjectId('697373f4a90c5d999f628d8d'), 'category_id': 38, 'category_name': 'Traffic Signal', 'department': 'Engineering / Infrastructure Department', 'is_active': True}
+
+--- 'complaints' Collection ---
+Sample Complaint Document ID: 69734d15e0648b476fc792a0
+Keys: ['_id', 'complaintId', 'callSid', 'phoneNumber', 'timestamp', 'originalText', 'language', 'translatedText', 'translation', 'category', 'categoryInfo', 'location', 'urgency', 'duplicate', 'recording', 'confidence', 'processing', 'status', 'createdAt', 'updatedAt', 'created_at']
+Linkage Fields: category_id=None, category=WATER_SUPPLY

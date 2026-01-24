@@ -1,0 +1,111 @@
+=== Department -> Category -> Complaint Mapping ===
+Building Category Map...
+Loaded 38 categories. Mapped 38 IDs.
+
+Department: Engineering / Infrastructure Department (Code: ENGINEERING)
+  Category IDs: [18, 49, 19, 38, 1, 3, 21]
+  Mapped Category Names (7): ['Storm Water Drainage Project', 'Monsoon Complaints', 'Drainage Project', 'Traffic Signal', 'Drainage And Storm Drain', 'Road And Footpath', 'Road Project Above 18 Meter']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Water Supply Department (Code: WATER_SUPPLY)
+  Category IDs: [2]
+  Mapped Category Names (1): ['Water Supply']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Electrical / Lighting Department (Code: STREETLIGHT)
+  Category IDs: [4]
+  Mapped Category Names (1): ['Street Light']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Solid Waste Management Department (Code: GARBAGE)
+  Category IDs: [8, 51, 27, 24]
+  Mapped Category Names (4): ['Garbage And Cleanliness', 'RRR Collection Van', 'Door To Door Garbage', 'E Waste']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Animal Control / Veterinary Department (Code: ANIMAL)
+  Category IDs: [30, 26, 5]
+  Mapped Category Names (3): ['Stray Dog', 'Stray Cattle', 'Dead Animals']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Public Health Department (Code: HEALTH)
+  Category IDs: [44, 10, 31]
+  Mapped Category Names (3): ['Air Quality Management', 'Public Health', 'Open Defecation']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Sanitation & Public Convenience Department (Code: SANITATION)
+  Category IDs: [9]
+  Mapped Category Names (1): ['Public Toilet']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Garden & Recreation Department (Code: GARDEN)
+  Category IDs: [39, 22]
+  Mapped Category Names (2): ['Swimming Pool', 'Parks And Garden']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Town Planning / Encroachment Department (Code: ENCROACHMENT)
+  Category IDs: [46]
+  Mapped Category Names (1): ['Encroachment']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Emergency & Disaster Management Department (Code: DISASTER)
+  Category IDs: [42, 45]
+  Mapped Category Names (2): ['QRT', 'Emergency']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Medical Services Department (Code: MEDICAL)
+  Category IDs: [17]
+  Mapped Category Names (1): ['Hospital And Dispensary']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Housing & Urban Development Department (Code: HOUSING)
+  Category IDs: [23]
+  Mapped Category Names (1): ['Housing Scheme']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Gas & Utility Services Department (Code: GAS)
+  Category IDs: [37]
+  Mapped Category Names (1): ['Gas Line']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Transport Department (Code: TRANSPORT)
+  Category IDs: [28, 48]
+  Mapped Category Names (2): ['Mall Parking Fee', 'City Bus Service']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Civic Services / Administration Department (Code: CIVIC)
+  Category IDs: [11, 47, 50, 41, 40]
+  Mapped Category Names (5): ['Birth And Death', 'Assessment Tax Rebate', 'Crematorium', 'Auditorium', 'Atithi Gruh']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Smart City / IT Department (Code: IT)
+  Category IDs: [36]
+  Mapped Category Names (1): ['Smart City Complaint']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Finance & Budget Department (Code: FINANCE)
+  Category IDs: [52]
+  Mapped Category Names (1): ['Budget Suggestion']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:
+
+Department: Social Welfare / Health Schemes Department (Code: WELFARE)
+  Category IDs: [34]
+  Mapped Category Names (1): ['Arogyam']
+  Total Complaints found for these categories: 0
+  [CHECK] Checking individual categories:

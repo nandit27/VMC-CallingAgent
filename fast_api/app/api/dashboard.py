@@ -1,9 +1,70 @@
 from fastapi import APIRouter, HTTPException
-from app.DB.mongo import complaints_col
+from app.DB.mongo import complaints_col, db
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
 
 router = APIRouter()
+
+# Define priority map globally
+CATEGORY_PRIORITIES = {
+    # Critical (1) - Life Safety & Basic Necessities
+    'EMERGENCY_DISASTER': 1,        
+    'MEDICAL_SERVICES': 1,          
+    'WATER_SUPPLY': 1,              
+    'GAS_UTILITY': 1,
+    'DISASTER': 1,
+    'MEDICAL': 1,
+    'GAS_LINE': 1, # Tag for Gas Line
+
+    # High (2) - Health & Sanitation
+    'ELECTRICAL_LIGHTING': 2,       
+    'SOLID_WASTE': 2,               
+    'SANITATION': 2,                
+    'PUBLIC_HEALTH': 2,
+    'STREETLIGHT': 2,
+    'GARBAGE': 2,
+    'HEALTH': 2,             
+
+    # Medium (3) - Infrastructure & Mobility
+    'ENGINEERING_INFRASTRUCTURE': 3, 
+    'TRANSPORT': 3,                 
+    'ANIMAL_CONTROL': 3,
+    'ENGINEERING': 3,
+    'ANIMAL': 3,            
+
+    # Low (4) - Administration & Planning
+    'TOWN_PLANNING': 4,             
+    'HOUSING_URBAN': 4,             
+    'GARDEN_RECREATION': 4,         
+    'CIVIC_ADMINISTRATION': 4,      
+    'SMART_CITY_IT': 4,             
+    'FINANCE_BUDGET': 4,            
+    'SOCIAL_WELFARE': 4,
+    'ENCROACHMENT': 4,
+    'HOUSING': 4,
+    'GARDEN': 4,
+    'CIVIC': 4,
+    'IT': 4,
+    'FINANCE': 4,
+    'WELFARE': 4,
+
+    # General Fallbacks for Tags
+    'GAS': 1,
+    'GARBAGE_CLEANLINESS': 2,
+    'DRAINAGE_STORM_DRAIN': 3,
+    'ROAD_FOOTPATH': 3,
+    'STREET_LIGHT': 2,
+    'DEAD_ANIMALS': 3
+}
+
+def get_complaint_tag(category_name: str) -> str:
+    """
+    Normalizes a Category Name (e.g. 'Water Supply') to a Complaint Tag (e.g. 'WATER_SUPPLY')
+    Rule: Replace ' And ' with ' ', then space to underscore, then upper.
+    """
+    if not category_name:
+        return ""
+    return category_name.replace(" And ", " ").replace(" ", "_").upper()
 
 @router.get("/admin/dashboard")
 async def get_dashboard_data(category: str = None, period: str = "weekly"):
@@ -12,22 +73,66 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
     Optional 'category' query param filters the complaint list.
     """
     try:
-        from app.data.department_mapping import DEPARTMENT_MAPPING, CATEGORY_TO_DEPARTMENT
+        # Dynamic Department Mapping
+        # 1. Fetch Categories (ID -> Name)
+        categories_cursor = db["categories"].find()
+        category_id_map = {}
+        for cat in categories_cursor:
+            if "category_id" in cat and "category_name" in cat:
+                category_id_map[cat["category_id"]] = cat["category_name"]
         
+        # 2. Fetch Departments
+        departments_cursor = db["departments"].find()
+        # dept_len removed
+        department_map = {} # Code -> List[Tags]
+        department_names = {} # Code -> Name
+        department_categories = {} # Code -> List[Category Names]
+        
+        for dept in departments_cursor:
+            d_code = dept.get("code")
+            d_name = dept.get("name")
+            d_cat_ids = dept.get("category_ids", [])
+            
+            department_names[d_code] = d_name
+            
+            # Map IDs to Tags
+            tags = []
+            cat_objects = []
+            for cid in d_cat_ids:
+                c_name = category_id_map.get(cid)
+                if c_name:
+                    tag = get_complaint_tag(c_name)
+                    tags.append(tag)
+                    cat_objects.append({"name": c_name, "tag": tag})
+                    
+            department_map[d_code] = tags
+            department_categories[d_code] = cat_objects
+
         # Determine categories filter
-        # 'category' param is now treated as 'Department Name' or 'Category Name'
-        # If it matches a Department, we include ALL its categories.
-        # If it matches a specific Category, we include just that.
-        
         target_categories = []
         is_department_filter = False
         
         if category:
-            if category in DEPARTMENT_MAPPING:
-                target_categories = DEPARTMENT_MAPPING[category]
+            # Check if 'category' param matches a Department Name or Code
+            # We need to find the code if Name is passed
+            found_code = None
+            for code, name in department_names.items():
+                if category == name or category == code:
+                    found_code = code
+                    break
+            
+            if found_code and found_code in department_map:
+                target_categories = department_map[found_code]
                 is_department_filter = True
             else:
-                target_categories = [category]
+                # Assume it's a specific Category Tag or Name
+                # If it's a Name (e.g. "Traffic Signal"), convert to Tag
+                # But best to rely on Tag being passed now
+                if " " in category and category.isupper() == False:
+                     # Attempt reverse lookup or just legacy conversion
+                     target_categories = [get_complaint_tag(category)]
+                else:
+                     target_categories = [category]
                 
         # Build query filter
         filter_query = {}
@@ -45,36 +150,104 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
         
         recent_complaints = list(recent_complaints_cursor)
         
-        # Custom Sort: High/Critical Priority First
-        urgency_score = {
-            "critical": 3,
-            "high": 2,
-            "medium": 1,
-            "low": 0
-        }
+        # Custom Sort: Priority First (using hardcoded map)
         
-        def get_sort_key(complaint):
-            level = complaint.get("urgency", {}).get("level", "medium").lower()
-            created_at = complaint.get("created_at", "")
-            # Ensure created_at is comparable (convert to string if datetime)
-            if hasattr(created_at, 'isoformat'):
-                created_at = created_at.isoformat()
-            return (urgency_score.get(level, 0), str(created_at))
+        def get_priority_val(category):
+            if not category: return 4
+            cat_upper = str(category).upper().replace(" ", "_").replace("AND_", "")
+            
+            if category in CATEGORY_PRIORITIES:
+                return CATEGORY_PRIORITIES[category]
+            if cat_upper in CATEGORY_PRIORITIES:
+                return CATEGORY_PRIORITIES[cat_upper]
+            if get_complaint_tag(category) in CATEGORY_PRIORITIES:
+                return CATEGORY_PRIORITIES[get_complaint_tag(category)]
+            return 4 # Default Low
 
-        recent_complaints.sort(key=get_sort_key, reverse=True)
+        def get_sort_key(complaint):
+            # Sort by Priority (Ascending 1..4) then Date (Desc)
+            # Python sort entries: (Priority, -Timestamp)
+            # Timestamp needs to be float/int for negation, or reverse tuple logic
+            
+            p_val = get_priority_val(complaint.get("category"))
+            
+            created_at = complaint.get("created_at", "")
+            ts = 0
+            if hasattr(created_at, 'timestamp'):
+                ts = created_at.timestamp()
+            
+            # We want Lowest Priority Number First (1=Critical), then Newest Date (Highest TS)
+            return (p_val, -ts)
+
+        recent_complaints.sort(key=get_sort_key) # Default Ascending for p_val (1..4), Descending for TS (-ts)
         recent_complaints = recent_complaints[:50]
+        
+        # Inject computed urgency into the recent_complaints response for Frontend
+        PRIORITY_LEVEL_MAP = {1: "critical", 2: "high", 3: "medium", 4: "low"}
+        for c in recent_complaints:
+            pv = get_priority_val(c.get("category"))
+            c["urgency"] = {"level": PRIORITY_LEVEL_MAP.get(pv, "low")}
         
         # Calculate stats (Filtered)
         def count_with_filter(status_val):
             q = filter_query.copy()
             q["status"] = status_val
             return complaints_col.count_documents(q)
+            
+        def count_pending():
+             q = filter_query.copy()
+             q["status"] = {"$ne": "Resolved"}
+             return complaints_col.count_documents(q)
 
         status_counts = {
             "Open": count_with_filter("Open"),
             "Resolved": count_with_filter("Resolved"),
-            "Pending": count_with_filter("Pending")
+            "Pending": count_pending()
         }
+
+        # Define priority map
+        # Using Global CATEGORY_PRIORITIES
+
+        PRIORITY_LEVEL_MAP = {
+            1: "critical",
+            2: "high",
+            3: "medium",
+            4: "low"
+        }
+
+        # Calculate Priority Counts by aggregating on Category first
+        # This allows us to use the map
+        priority_group_pipeline = [
+             {"$match": filter_query},
+             {"$group": {"_id": "$category", "count": {"$sum": 1}}}
+        ]
+        
+        priority_group_cursor = complaints_col.aggregate(priority_group_pipeline)
+        
+        priority_counts = {"critical": 0, "high": 0, "medium": 0, "low": 0}
+        
+        for item in priority_group_cursor:
+            cat = item.get("_id")
+            count = item.get("count", 0)
+            if not cat: continue
+            
+            # Normalize cat to uppercase for matching
+            norm_cat = str(cat).upper().replace(" ", "_").replace("AND_", "") # Attempt to match tags
+             
+            # Direct match or fuzzy match
+            if cat in CATEGORY_PRIORITIES:
+                p_val = CATEGORY_PRIORITIES[cat]
+            elif norm_cat in CATEGORY_PRIORITIES:
+                p_val = CATEGORY_PRIORITIES[norm_cat]
+            elif get_complaint_tag(cat) in CATEGORY_PRIORITIES:
+                p_val = CATEGORY_PRIORITIES[get_complaint_tag(cat)]
+            else:
+                p_val = 4 # Default to Low
+                
+            level_name = PRIORITY_LEVEL_MAP.get(p_val, "low")
+            priority_counts[level_name] += count
+            
+        high_priority_count = priority_counts["critical"] + priority_counts["high"]
 
         # Calculate Department Counts (Aggregation)
         # 1. Get raw category counts
@@ -84,18 +257,18 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
         category_counts_cursor = complaints_col.aggregate(pipeline)
         category_counts_map = {item["_id"]: item["count"] for item in category_counts_cursor if item["_id"]}
         
-        # 2. Aggregate into Departments
+        # 2. Aggregate into Departments using Dynamic Map
         department_stats = []
-        for dept_name, cats in DEPARTMENT_MAPPING.items():
+        for code, tags in department_map.items():
             count = 0
-            for cat in cats:
-                count += category_counts_map.get(cat, 0)
+            for tag in tags:
+                count += category_counts_map.get(tag, 0)
             
             department_stats.append({
-                "code": dept_name, # Using Name as Code for frontend compatibility
-                "name": dept_name,
+                "code": code,
+                "name": department_names[code],
                 "count": count,
-                "categories": cats # Optional: send child categories if needed
+                "categories": department_categories[code] # List of readable names
             })
             
         # Sort departments by count desc
@@ -133,21 +306,17 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
             # Ignore others/unknowns for the chart per requirement
 
         # Calculate Activity Trend based on Period
-        # Default to 'weekly' if not specified
         period = period.lower() if period else 'weekly'
         
         activity_trend = []
         
         if period == 'monthly':
-            # Last 12 Months
-            # We want to group by Year-Month (YYYY-MM)
-            today = datetime.now()
-            # Start from 11 months ago to cover a full 12-month window including current month
-            # Or simplier: just get dates > 1 year ago
-            one_year_ago = today - timedelta(days=365)
+            # Last 30 Days (Daily)
+            today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+            thirty_days_ago = today - timedelta(days=29)
             
             trend_match = {
-                 "created_at": {"$gte": one_year_ago}
+                 "created_at": {"$gte": thirty_days_ago}
             }
             if target_categories:
                 trend_match["category"] = {"$in": target_categories}
@@ -156,44 +325,35 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
                 { "$match": trend_match },
                 {
                     "$group": {
-                        "_id": { "$dateToString": { "format": "%Y-%m", "date": "$created_at" } },
-                        "count": { "$sum": 1 }
+                        "_id": { "$dateToString": { "format": "%Y-%m-%d", "date": "$created_at" } },
+                        "count": { "$sum": 1 },
+                        # "pending": { "$sum": { "$cond": [{ "$ne": ["$status", "Resolved"] }, 1, 0] } }, # Complex, maybe simple count first
+                        # For simple usage, we just use total count per day. 
+                        # To support stacked (pending vs resolved), we need conditional sum
+                        "resolved": { "$sum": { "$cond": [{ "$eq": ["$status", "Resolved"] }, 1, 0] } },
+                        "pending": { "$sum": { "$cond": [{ "$ne": ["$status", "Resolved"] }, 1, 0] } }
                     }
                 },
                 { "$sort": { "_id": 1 } }
             ]
             
             trend_cursor = complaints_col.aggregate(trend_pipeline)
-            trend_data_map = {item["_id"]: item["count"] for item in trend_cursor}
+            trend_data_map = {item["_id"]: item for item in trend_cursor}
             
-            # Generate last 12 months list for filling gaps
-            # Logic: Iterate from 11 months ago to now
-            current_month = today.replace(day=1)
-            for i in range(11, -1, -1):
-                # Calculate past month
-                # safe logic: subtracting days is tricky for months. 
-                # Better: (Year, Month) tuples
-                # Simple approx: today - i * 30 days usually works for 'recent' logic, 
-                # but exact months are better. 
+            activity_trend = []
+            for i in range(30):
+                date_obj = thirty_days_ago + timedelta(days=i)
+                date_str = date_obj.strftime("%Y-%m-%d")
+                day_name = date_obj.strftime("%b %d")
                 
-                # Using relativedelta is best but standard lib fix:
-                # Construct date:
-                d = today
-                total_months = d.month - 1 - i
-                
-                # math to handle year rollback
-                y = d.year + (total_months // 12)
-                m = (total_months % 12) + 1
-                
-                month_str = f"{y}-{m:02d}"
-                # Display name: "Jan", "Feb"
-                month_obj = datetime(y, m, 1)
-                month_name = month_obj.strftime("%b")
+                data = trend_data_map.get(date_str, {"count": 0, "pending": 0, "resolved": 0})
                 
                 activity_trend.append({
-                    "date": month_str,
-                    "name": month_name, 
-                    "count": trend_data_map.get(month_str, 0)
+                    "date": date_str,
+                    "name": day_name, 
+                    "count": data.get("count", 0),
+                    "pending": data.get("pending", 0),
+                    "resolved": data.get("resolved", 0)
                 })
 
         else:
@@ -216,14 +376,16 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
                         "_id": {
                             "$dateToString": {"format": "%Y-%m-%d", "date": "$created_at"}
                         },
-                        "count": {"$sum": 1}
+                        "count": {"$sum": 1},
+                        "resolved": { "$sum": { "$cond": [{ "$eq": ["$status", "Resolved"] }, 1, 0] } },
+                        "pending": { "$sum": { "$cond": [{ "$ne": ["$status", "Resolved"] }, 1, 0] } }
                     }
                 },
                 {"$sort": {"_id": 1}}
             ]
             
             trend_cursor = complaints_col.aggregate(trend_pipeline)
-            trend_data_map = {item["_id"]: item["count"] for item in trend_cursor}
+            trend_data_map = {item["_id"]: item for item in trend_cursor}
             
             activity_trend = []
             for i in range(7):
@@ -231,17 +393,26 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
                 date_str = date_obj.strftime("%Y-%m-%d")
                 day_name = date_obj.strftime("%a")
                 
+                data = trend_data_map.get(date_str, {"count": 0, "pending": 0, "resolved": 0})
+                
                 activity_trend.append({
                     "date": date_str,
                     "name": day_name,
-                    "count": trend_data_map.get(date_str, 0)
+                    "count": data.get("count", 0),
+                    "pending": data.get("pending", 0),
+                    "resolved": data.get("resolved", 0)
                 })
 
         return {
             "stats": {
                 "total": total_complaints,
                 "by_status": status_counts,
+<<<<<<< Updated upstream
                 "by_status": status_counts,
+=======
+                "high_priority": high_priority_count,
+                "priority_breakdown": priority_counts,
+>>>>>>> Stashed changes
                 "by_category": department_stats, 
                 "by_zone": zone_stats,
                 "activity_trend": activity_trend 
@@ -267,23 +438,18 @@ async def resolve_complaint(complaint_id: str):
     Mark a complaint as Resolved
     """
     try:
-        # Determine if ID is ObjectId or String
         query = {}
         if ObjectId.is_valid(complaint_id):
             query = {"_id": ObjectId(complaint_id)}
         else:
-            # Fallback for custom string IDs
-            # Try matching _id first, then complaintId if needed
             query = {"$or": [{"_id": complaint_id}, {"complaintId": complaint_id}]}
 
-        # Update status to Resolved
         result = complaints_col.update_one(
             query,
             {"$set": {"status": "Resolved", "urgency.level": "resolved"}}
         )
         
         if result.matched_count == 0:
-             # Try one more time treating it purely as a string ID
              result = complaints_col.update_one(
                 {"_id": complaint_id},
                  {"$set": {"status": "Resolved", "urgency.level": "resolved"}}
@@ -308,3 +474,4 @@ async def get_all_complaints():
         return {"complaints": complaints}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching complaints: {str(e)}")
+

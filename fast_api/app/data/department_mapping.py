@@ -7,10 +7,10 @@ DEPARTMENT_MAPPING = {
         "ROAD", "DRAINAGE" 
     ],
     "Water Supply Department": ["Water Supply"],
-    "Electrical / Lighting Department": ["Street Light"],
+    "Electrical / Lighting Department": ["Street Light", "STREET_LIGHT"],
     "Solid Waste Management Department": [
         "RRR Collection Van", "Garbage And Cleanliness", "E Waste", "Door To Door Garbage",
-        "GARBAGE"
+        "GARBAGE", "Garbage"
     ],
     "Animal Control / Veterinary Department": [
         "Stray Dog", "Stray Cattle", "Dead Animals"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DepartmentCard from '../components/dashboard/DepartmentCard';
-import { Loader2, AlertCircle } from 'lucide-react';
+import { Loader2, AlertCircle, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Departments = () => {
@@ -70,9 +70,9 @@ const Departments = () => {
                     <div className="bg-white rounded-3xl w-full max-w-lg shadow-2xl p-6 relative animate-in zoom-in-95 duration-200">
                         <button
                             onClick={() => setSelectedDept(null)}
-                            className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-500 hover:text-gray-900"
                         >
-                            ✕
+                            <X size={24} />
                         </button>
 
                         <div className="text-center mb-6">
@@ -82,22 +82,28 @@ const Departments = () => {
 
                         <div className="space-y-2 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
                             <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Categories</h3>
-                            {selectedDept.categories && selectedDept.categories.length > 0 ? (
-                                selectedDept.categories.map((cat, idx) => (
+                            {(() => {
+                                const categories = selectedDept.categories || [];
+
+                                if (categories.length === 0) {
+                                    return (
+                                        <div className="text-center py-8 text-gray-400 bg-gray-50 rounded-xl border border-dashed">
+                                            No categories found for this department.
+                                        </div>
+                                    );
+                                }
+
+                                return categories.map((cat, idx) => (
                                     <button
                                         key={idx}
-                                        onClick={() => navigate(`/complaints?category=${encodeURIComponent(cat)}`)}
+                                        onClick={() => navigate(`/complaints?category=${encodeURIComponent(cat.tag)}`)}
                                         className="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 transition-all flex justify-between items-center group"
                                     >
-                                        <span className="font-medium text-gray-700 group-hover:text-blue-700">{cat}</span>
+                                        <span className="font-medium text-gray-700 group-hover:text-blue-700">{cat.name}</span>
                                         <span className="text-gray-400 group-hover:text-blue-500">→</span>
                                     </button>
-                                ))
-                            ) : (
-                                <div className="text-center py-8 text-gray-400 bg-gray-50 rounded-xl border border-dashed">
-                                    No specific categories found.
-                                </div>
-                            )}
+                                ));
+                            })()}
                         </div>
                     </div>
                 </div>

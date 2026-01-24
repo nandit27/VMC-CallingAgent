@@ -4,7 +4,12 @@ import StatsCard from '../components/dashboard/StatsCard';
 import ComplaintCard from '../components/dashboard/ComplaintCard';
 import DepartmentCard from '../components/dashboard/DepartmentCard';
 import ActivityChart from '../components/dashboard/ActivityChart';
+<<<<<<< Updated upstream
 import ZoneWiseChart from '../components/dashboard/ZoneWiseChart';
+=======
+import ComplaintProgress from '../components/dashboard/ComplaintProgress';
+import PriorityStats from '../components/dashboard/PriorityStats';
+>>>>>>> Stashed changes
 
 
 // Map category codes to display names - Fallback only
@@ -71,9 +76,10 @@ const Dashboard = () => {
             // Calculate stats
             setStats({
                 total: data.stats?.total || 0,
-                pending: (data.stats?.by_status?.Pending || 0) + (data.stats?.by_status?.Open || 0),
+                pending: data.stats?.by_status?.Pending || 0,
                 resolved: data.stats?.by_status?.Resolved || 0,
-                highPriority: mappedComplaints.filter(c => String(c.severity).toLowerCase() === 'high').length,
+                highPriority: data.stats?.high_priority || 0,
+                priorityBreakdown: data.stats?.priority_breakdown || { critical: 0, high: 0, medium: 0, low: 0 },
                 byCategory: Array.isArray(data.stats?.by_category) ? data.stats.by_category : [],
                 byZone: data.stats?.by_zone || null,
                 activityTrend: data.stats?.activity_trend || []
@@ -135,7 +141,7 @@ const Dashboard = () => {
     return (
         <div className="flex flex-col gap-8 pb-8">
             {/* Stats Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <StatsCard
                     title="Total Complaints"
                     value={stats.total}
@@ -160,23 +166,28 @@ const Dashboard = () => {
                     icon={CheckCircle}
                     color="success"
                 />
-                <StatsCard
-                    title="High Priority"
-                    value={stats.highPriority}
-                    change={0}
-                    trend="neutral"
-                    icon={AlertCircle}
-                    color="accent"
-                />
+            </div>
+
+            {/* Priority Stats */}
+            <div className="mb-6">
+                <PriorityStats stats={stats.priorityBreakdown} />
             </div>
 
             {/* Charts & Analytics */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-3 h-80">
+                <div className="lg:col-span-2 h-80">
                     <ActivityChart
                         data={stats.activityTrend || []}
                         period={chartPeriod}
                         onPeriodChange={setChartPeriod}
+                    />
+                </div>
+                <div className="lg:col-span-1 h-80">
+                    <ComplaintProgress
+                        total={stats.total}
+                        resolved={stats.resolved}
+                        pending={stats.pending}
+                        highPriority={stats.highPriority}
                     />
                 </div>
             </div>

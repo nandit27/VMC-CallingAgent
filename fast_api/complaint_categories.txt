@@ -1,0 +1,11 @@
+=== Distinct Complaint Categories ===
+Found 7 distinct categories.
+ - DEAD_ANIMALS
+ - DRAINAGE_STORM_DRAIN
+ - GARBAGE_CLEANLINESS
+ - GAS_LINE
+ - ROAD_FOOTPATH
+ - STREET_LIGHT
+ - WATER_SUPPLY
+
+Complaints with 'category_id' field: 0

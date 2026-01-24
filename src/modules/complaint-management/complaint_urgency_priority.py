@@ -15,7 +15,11 @@ class ComplaintUrgencyPriority:
             'EMERGENCY_DISASTER': 1,        # Emergency & Disaster Management Department
             'MEDICAL_SERVICES': 1,          # Medical Services Department
             'WATER_SUPPLY': 1,              # Water Supply Department
+<<<<<<< Updated upstream
             'GAS_UTILITY': 1,               # Gas & Utility Services Department
+=======
+            'Gas Line': 1,               # Gas & Utility Services Department
+>>>>>>> Stashed changes
 
             # High (2) - Health & Sanitation
             'ELECTRICAL_LIGHTING': 2,       # Electrical / Lighting Department

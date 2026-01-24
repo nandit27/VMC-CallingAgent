@@ -4,94 +4,79 @@ import { ArrowUp, ArrowDown } from 'lucide-react';
 const StatsCard = ({ title, value, change, trend, icon: Icon, color }) => {
     const isPositive = trend === 'up';
 
-    // Map color prop to specific visual styles matching the requested design
-    const getTheme = () => {
+    // Modern Professional Color Mapping
+    const getColors = () => {
         switch (color) {
-            case 'secondary': // Pending Actions (Orange)
+            case 'secondary': // Pending (Orange)
                 return {
-                    bg: 'bg-[#FFF9F0]', // Light orange/cream
-                    iconBg: 'bg-[#FD7E14]', // Orange
-                    iconColor: 'text-white',
-                    titleColor: 'text-[#8C5E3C]', // Brownish
-                    valueColor: 'text-[#3E2C22]', // Dark Orange/Brown
-                    trendBg: 'bg-white',
-                    trendText: 'text-gray-600'
+                    border: 'border-orange-500',
+                    iconBg: 'bg-orange-50',
+                    iconText: 'text-orange-600',
+                    trendColor: 'text-orange-600'
                 };
             case 'accent': // High Priority (Red)
                 return {
-                    bg: 'bg-[#FFF0F0]', // Light pink/red
-                    iconBg: 'bg-[#FA5252]', // Red
-                    iconColor: 'text-white',
-                    titleColor: 'text-[#8B3E3E]', // Reddish brown
-                    valueColor: 'text-[#2D0F0F]', // Dark Red
-                    trendBg: 'bg-white',
-                    trendText: 'text-gray-600'
+                    border: 'border-red-500',
+                    iconBg: 'bg-red-50',
+                    iconText: 'text-red-600',
+                    trendColor: 'text-red-600'
                 };
             case 'success': // Resolved (Green)
                 return {
-                    bg: 'bg-[#F0FFF4]', // Light mint
-                    iconBg: 'bg-[#10B981]', // Green
-                    iconColor: 'text-white',
-                    titleColor: 'text-[#2D6A4F]', // Greenish
-                    valueColor: 'text-[#062C1E]', // Dark Green
-                    trendBg: 'bg-white',
-                    trendText: 'text-gray-600'
+                    border: 'border-green-500',
+                    iconBg: 'bg-green-50',
+                    iconText: 'text-green-600',
+                    trendColor: 'text-green-600'
                 };
-            case 'primary': // Total Complaints (Blue)
+            case 'primary': // Total (Blue)
             default:
-                if (title === 'Resolved') {
-                    // Fallback if 'Resolved' is passed with 'primary' color
+                if (title === 'Resolved') { // Fallback
                     return {
-                        bg: 'bg-[#F0FFF4]',
-                        iconBg: 'bg-[#10B981]',
-                        iconColor: 'text-white',
-                        titleColor: 'text-[#2D6A4F]',
-                        valueColor: 'text-[#062C1E]',
-                        trendBg: 'bg-white',
-                        trendText: 'text-gray-600'
+                        border: 'border-green-500',
+                        iconBg: 'bg-green-50',
+                        iconText: 'text-green-600',
+                        trendColor: 'text-green-600'
                     };
                 }
                 return {
-                    bg: 'bg-[#EFF6FF]', // Light Blue
-                    iconBg: 'bg-[#2563EB]', // Blue
-                    iconColor: 'text-white',
-                    titleColor: 'text-[#3B5B8E]', // Blueish gray
-                    valueColor: 'text-[#0F172A]', // Dark blue/black
-                    trendBg: 'bg-white',
-                    trendText: 'text-gray-600'
+                    border: 'border-blue-500',
+                    iconBg: 'bg-blue-50',
+                    iconText: 'text-blue-600',
+                    trendColor: 'text-blue-600'
                 };
         }
     };
 
-    const theme = getTheme();
+    const colors = getColors();
 
     return (
-        <div className={`relative p-6 rounded-[2rem] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${theme.bg}`}>
-            <div className="flex justify-between items-start mb-4">
-                {/* Icon Circle */}
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-sm ${theme.iconBg} ${theme.iconColor}`}>
-                    <Icon size={20} className="stroke-[2.5]" />
+        <div className={`group bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-l-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${colors.border}`}>
+            <div className="flex justify-between items-start">
+                <div className="flex flex-col">
+                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                        {title}
+                    </p>
+                    <h3 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+                        {value}
+                    </h3>
+
+                    {/* Trend / Change Indicator (Optional) */}
+                    <div className="flex items-center gap-2 mt-2">
+                        <div className={`flex items-center text-xs font-bold ${isPositive ? 'text-green-600' : colors.trendColor}`}>
+                            {isPositive ? <ArrowUp size={12} /> : <ArrowDown size={12} />}
+                            <span>{Math.abs(change)}%</span>
+                        </div>
+                        <span className="text-xs text-gray-400 font-medium">from last month</span>
+                    </div>
                 </div>
 
-                {/* Trend Badge */}
-                <div className={`flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm ${theme.trendBg} ${theme.trendText}`}>
-                    {isPositive ? <ArrowUp size={10} className="text-green-500" /> : <ArrowDown size={10} className="text-red-500" />}
-                    <span>{Math.abs(change)}%</span>
+                {/* Icon Container */}
+                <div className={`p-3 rounded-xl transition-colors duration-300 group-hover:bg-opacity-100 ${colors.iconBg} ${colors.iconText}`}>
+                    <Icon size={24} strokeWidth={2} />
                 </div>
-            </div>
-
-            <div className="flex flex-col gap-1">
-                <h3 className={`text-[11px] font-bold uppercase tracking-wider ${theme.titleColor}`}>
-                    {title}
-                </h3>
-                <p className={`text-4xl font-extrabold tracking-tight ${theme.valueColor}`}>
-                    {value}
-                </p>
             </div>
         </div>
     );
 };
 
 export default StatsCard;
-
-

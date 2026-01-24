@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const ActivityChart = ({ data, period, onPeriodChange }) => {
     return (
@@ -30,7 +30,7 @@ const ActivityChart = ({ data, period, onPeriodChange }) => {
 
             <div className="flex-1 w-full min-h-[200px]">
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
+                    <LineChart
                         data={data}
                         margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
                     >
@@ -48,23 +48,23 @@ const ActivityChart = ({ data, period, onPeriodChange }) => {
                             tick={{ fill: '#9ca3af', fontSize: 12 }}
                         />
                         <Tooltip
-                            cursor={{ fill: '#f9fafb' }}
                             contentStyle={{
-                                backgroundColor: '#1f2937',
+                                backgroundColor: '#fff',
                                 border: 'none',
                                 borderRadius: '8px',
-                                color: '#fff'
+                                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
                             }}
-                            itemStyle={{ color: '#fff' }}
                         />
-                        <Bar
+                        <Line
+                            type="monotone"
                             dataKey="count"
-                            fill="#3b82f6"
-                            radius={[6, 6, 0, 0]}
-                            barSize={32}
+                            stroke="#3b82f6"
+                            strokeWidth={3}
+                            dot={{ r: 4, fill: '#3b82f6', strokeWidth: 2, stroke: '#fff' }}
+                            activeDot={{ r: 6, fill: '#2563eb' }}
                             name="Complaints"
                         />
-                    </BarChart>
+                    </LineChart>
                 </ResponsiveContainer>
             </div>
         </div>
