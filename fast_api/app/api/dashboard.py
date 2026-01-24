@@ -295,13 +295,13 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
             raw_zone = str(item.get("_id", "")).lower()
             count = item.get("count", 0)
             
-            if "north" in raw_zone:
+            if "north" in raw_zone or raw_zone == "n":
                 zone_stats["Zone North"] += count
-            elif "south" in raw_zone:
+            elif "south" in raw_zone or raw_zone == "s":
                 zone_stats["Zone South"] += count
-            elif "east" in raw_zone:
+            elif "east" in raw_zone or raw_zone == "e":
                 zone_stats["Zone East"] += count
-            elif "west" in raw_zone:
+            elif "west" in raw_zone or raw_zone == "w":
                 zone_stats["Zone West"] += count
             # Ignore others/unknowns for the chart per requirement
 
@@ -407,12 +407,9 @@ async def get_dashboard_data(category: str = None, period: str = "weekly"):
             "stats": {
                 "total": total_complaints,
                 "by_status": status_counts,
-<<<<<<< Updated upstream
                 "by_status": status_counts,
-=======
                 "high_priority": high_priority_count,
                 "priority_breakdown": priority_counts,
->>>>>>> Stashed changes
                 "by_category": department_stats, 
                 "by_zone": zone_stats,
                 "activity_trend": activity_trend 

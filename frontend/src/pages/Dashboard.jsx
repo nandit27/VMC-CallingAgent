@@ -4,12 +4,9 @@ import StatsCard from '../components/dashboard/StatsCard';
 import ComplaintCard from '../components/dashboard/ComplaintCard';
 import DepartmentCard from '../components/dashboard/DepartmentCard';
 import ActivityChart from '../components/dashboard/ActivityChart';
-<<<<<<< Updated upstream
 import ZoneWiseChart from '../components/dashboard/ZoneWiseChart';
-=======
 import ComplaintProgress from '../components/dashboard/ComplaintProgress';
 import PriorityStats from '../components/dashboard/PriorityStats';
->>>>>>> Stashed changes
 
 
 // Map category codes to display names - Fallback only
@@ -24,7 +21,6 @@ const Dashboard = () => {
         total: 0,
         pending: 0,
         resolved: 0,
-        highPriority: 0,
         highPriority: 0,
         byCategory: [],
         byZone: null,
@@ -246,12 +242,12 @@ const Dashboard = () => {
 
             {/* Zone Wise Chart */}
             <div className="mt-8">
-                <ZoneWiseChart data={(() => {
-                    if (stats.byZone) {
+                {/* <ZoneWiseChart data={(() => {
+                    if (stats.by_zone) {
                         // Use backend aggregated data
-                        return Object.keys(stats.byZone).map(zoneKey => ({
+                        return Object.keys(stats.by_zone).map(zoneKey => ({
                             name: zoneKey,
-                            complaints: stats.byZone[zoneKey]
+                            complaints: stats.by_zone[zoneKey]
                         }));
                     }
 
@@ -276,7 +272,7 @@ const Dashboard = () => {
                         name: zone,
                         complaints: zoneCounts[zone]
                     }));
-                })()} />
+                })()} /> */}
             </div>
         </div>
     );
