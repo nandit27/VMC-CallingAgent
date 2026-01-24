@@ -1,0 +1,1717 @@
+[
+  {
+    "tokens": [
+      "sir",
+      "garbage",
+      "problem",
+      "near",
+      "maninagar",
+      "and",
+      "street",
+      "lights",
+      "not",
+      "working",
+      "in",
+      "bodakdev"
+    ],
+    "tags": [
+      "O",
+      "B-COMP",
+      "O",
+      "O",
+      "B-LOC",
+      "O",
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "O",
+      "B-LOC"
+    ]
+  },
+  {
+    "tokens": [
+      "street",
+      "lights",
+      "are",
+      "off",
+      "in",
+      "ms",
+      "university",
+      "and",
+      "there",
+      "is",
+      "also",
+      "a",
+      "problem",
+      "with",
+      "water",
+      "pipeline.",
+      "there",
+      "is",
+      "also",
+      "a",
+      "problem",
+      "with",
+      "street",
+      "lights",
+      "in",
+      "parul",
+      "university."
+    ],
+    "tags": [
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "O",
+      "B-LOC",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O",
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "O",
+      "B-LOC",
+      "O"
+    ]
+  },
+  {
+    "tokens": [
+      "street",
+      "lights",
+      "not",
+      "working",
+      "in",
+      "makarpura",
+      "bus",
+      "district"
+    ],
+    "tags": [
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "O",
+      "B-LOC",
+      "I-LOC",
+      "O"
+    ]
+  },
+  {
+    "tokens": [
+      "street",
+      "lights",
+      "not",
+      "working",
+      "in",
+      "makarpura",
+      "bus",
+      "district"
+    ],
+    "tags": [
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "B-LOC",
+      "I-LOC",
+      "I-LOC"
+    ]
+  },
+  {
+    "tokens": [
+      "street",
+      "lights",
+      "not",
+      "working",
+      "in",
+      "makarpura",
+      "bus",
+      "district"
+    ],
+    "tags": [
+      "B-COMP",
+      "I-COMP",
+      "O",
+      "B-LOC",
+      "I-LOC",
+      "O",
+      "O",
+      "O"
+    ]
+  },
+  {
+    "tokens": [
+      "water",
+      "supply",
+      "irregular",
+      "in",
+      "khodiyar",
+      "nagar"
+    ],
+    "tags": [
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "B-LOC",
+      "I-LOC"
+    ]
+  },
+  {
+    "tokens": [
+      "water",
+      "supply",
+      "irregular",
+      "in",
+      "khodiyar",
+      "nagar"
+    ],
+    "tags": [
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "B-LOC",
+      "I-LOC"
+    ]
+  },
+  {
+    "tokens": [
+      "in",
+      "gokul",
+      "dham",
+      "garbage",
+      "not",
+      "collected"
+    ],
+    "tags": [
+      "O",
+      "B-LOC",
+      "I-LOC",
+      "B-COMP",
+      "I-COMP",
+      "I-COMP"
+    ]
+  },
+  {
+    "tokens": [
+      "street",
+      "lights",
+      "are",
+      "off",
+      "near",
+      "tulsi",
+      "vatika"
+    ],
+    "tags": [
+      "B-COMP",
+      "I-COMP",
+      "I-COMP",
+      "I-COMP",
+      "O",
+      "B-LOC",
+      "I-LOC"
+    ]
+  },
+    {
+      "tokens": ["traffic", "signal", "not", "working", "near", "maninagar", "cross", "road"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["sir", "the", "signal", "stuck", "on", "red", "at", "vastrapur", "and", "street", "lights", "off", "in", "bodakdev"],
+      "tags": ["O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["junction", "signal", "not", "working", "near", "paldi", "causing", "traffic", "jam"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "O"]
+    },
+    {
+      "tokens": ["traffic", "lights", "off", "near", "ms", "university", "and", "garbage", "lying", "on", "road"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["signal", "blinking", "continuously", "at", "iskcon", "circle", "since", "yesterday"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O"]
+    },
+    {
+      "tokens": ["near", "railway", "crossing", "signal", "stuck", "on", "green", "and", "it", "is", "dangerous"],
+      "tags": ["O", "B-LOC", "I-LOC", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O", "O"]
+    },
+    {
+      "tokens": ["street", "lights", "not", "working", "and", "traffic", "signal", "damaged", "in", "makarpura"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["signal", "timing", "incorrect", "near", "parul", "university", "causing", "accidents"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O"]
+    },
+    {
+      "tokens": ["in", "gokul", "dham", "traffic", "signal", "not", "working", "properly"],
+      "tags": ["O", "B-LOC", "I-LOC", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+    },
+    {
+      "tokens": ["traffic", "lights", "off", "at", "night", "near", "tulsi", "vatika", "gate"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "O", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["junction", "signal", "not", "working", "near", "khodiyar", "nagar", "and", "pipeline", "leakage", "there"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O"]
+    },
+    {
+      "tokens": ["sir", "the", "signal", "stuck", "on", "red", "near", "satellite", "area"],
+      "tags": ["O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["signal", "causing", "traffic", "jam", "near", "shyamal", "cross", "roads"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["traffic", "signal", "damaged", "outside", "civil", "hospital"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["near", "prahlad", "nagar", "garden", "signal", "blinking", "continuously"],
+      "tags": ["O", "B-LOC", "I-LOC", "I-LOC", "B-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["signal", "timing", "incorrect", "at", "income", "tax", "office"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["traffic", "lights", "not", "functioning", "in", "gota", "and", "road", "is", "broken"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["near", "kalupur", "station", "junction", "signal", "not", "working"],
+      "tags": ["O", "B-LOC", "I-LOC", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["signal", "stuck", "on", "green", "near", "law", "garden", "very", "unsafe"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O"]
+    },
+    {
+      "tokens": ["traffic", "signal", "not", "working", "near", "thaltej", "metro", "station"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["at", "bopal", "cross", "road", "signal", "causing", "traffic", "jam", "daily"],
+      "tags": ["O", "B-LOC", "I-LOC", "I-LOC", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+    },
+    {
+      "tokens": ["signal", "timing", "incorrect", "near", "manav", "mandir", "and", "street", "light", "flickering"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["traffic", "lights", "off", "near", "navrangpura", "bus", "stop"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["junction", "signal", "not", "working", "near", "naranpura", "post", "office"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["signal", "stuck", "on", "red", "near", "vastral", "metro"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    }
+    ,
+    {
+      "tokens": ["no", "water", "supply", "in", "maninagar", "area", "since", "morning"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O"]
+    },
+    {
+      "tokens": ["sir", "water", "not", "coming", "near", "vastrapur", "lake", "and", "street", "lights", "are", "off"],
+      "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["dirty", "water", "from", "tap", "in", "bodakdev", "causing", "health", "issues"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "O"]
+    },
+    {
+      "tokens": ["low", "water", "pressure", "near", "parul", "university", "hostel", "for", "two", "days"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "O"]
+    },
+    {
+      "tokens": ["pipeline", "leakage", "near", "paldi", "cross", "road", "water", "flowing", "on", "road"],
+      "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["water", "supply", "stopped", "near", "ms", "university", "and", "garbage", "not", "collected"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["muddy", "water", "supply", "in", "gokul", "dham", "society"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["water", "pipe", "burst", "near", "iskcon", "temple", "gate"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["irregular", "water", "supply", "near", "makarpura", "bus", "district"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["bad", "smell", "in", "tap", "water", "outside", "civil", "hospital"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["water", "coming", "for", "short", "time", "in", "khodiyar", "nagar"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["drinking", "water", "not", "available", "near", "tulsi", "vatika"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["water", "meter", "damaged", "and", "pipeline", "leakage", "at", "satellite"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["no", "drinking", "water", "near", "naranpura", "post", "office", "since", "last", "night"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "O"]
+    },
+    {
+      "tokens": ["water", "shortage", "in", "area", "near", "shyamal", "circle"],
+      "tags": ["B-COMP", "I-COMP", "O", "O", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["very", "low", "water", "pressure", "and", "drain", "overflow", "in", "gota"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["water", "supply", "stopped", "near", "thaltej", "metro", "station"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["muddy", "water", "coming", "from", "tap", "near", "law", "garden"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["water", "supply", "line", "broken", "at", "prahlad", "nagar"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["dirty", "water", "supply", "and", "sewer", "line", "blocked", "near", "kalupur"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["sir", "water", "is", "not", "coming", "near", "manav", "mandir"],
+      "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["pipeline", "leakage", "causing", "water", "shortage", "in", "vastral"],
+      "tags": ["B-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["no", "water", "supply", "at", "income", "tax", "colony"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["water", "flowing", "on", "road", "near", "navrangpura", "bus", "stop"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["irregular", "water", "supply", "and", "garbage", "lying", "on", "road", "in", "bopal"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["sir", "the", "swimming", "pool", "is", "closed", "near", "vastrapur", "lake", "and", "there", "is", "also", "no", "water", "supply", "in", "maninagar", "area"],
+      "tags": ["O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["pool", "water", "is", "dirty", "at", "the", "bodakdev", "club", "and", "street", "lights", "are", "off", "near", "the", "society", "gate", "since", "last", "night"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC", "O", "O", "O"]
+    },
+    {
+      "tokens": ["swimming", "pool", "maintenance", "not", "done", "near", "paldi", "and", "garbage", "is", "lying", "on", "the", "road", "outside", "ms", "university"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["the", "swimming", "pool", "is", "not", "usable", "near", "iskcon", "circle", "due", "to", "pool", "hygiene", "issue", "and", "pipeline", "leakage", "in", "satellite"],
+      "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["pool", "water", "dirty", "at", "makarpura", "stadium", "while", "traffic", "signal", "is", "not", "working", "near", "the", "bus", "district", "junction"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["swimming", "pool", "closed", "near", "gokul", "dham", "society", "plus", "dirty", "water", "coming", "from", "tap", "in", "khodiyar", "nagar"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["pool", "hygiene", "issue", "reported", "near", "parul", "university", "campus", "and", "street", "lights", "not", "working", "near", "the", "hospital"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["maintenance", "not", "done", "for", "pool", "near", "tulsi", "vatika", "and", "manhole", "is", "overflowing", "near", "shyamal", "cross", "roads"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "O", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["swimming", "pool", "not", "usable", "at", "naranpura", "complex", "and", "irregular", "water", "supply", "near", "the", "post", "office"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["pool", "water", "is", "dirty", "near", "thaltej", "metro", "and", "garbage", "van", "not", "arrived", "in", "gota", "area"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["swimming", "pool", "closed", "near", "law", "garden", "for", "many", "days", "and", "street", "light", "flickering", "outside", "my", "building"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["pool", "hygiene", "issue", "at", "prahlad", "nagar", "sport", "center", "and", "the", "junction", "signal", "is", "not", "working", "nearby"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+    },
+    {
+      "tokens": ["sir", "swimming", "pool", "not", "usable", "near", "navrangpura", "bus", "stop", "and", "muddy", "water", "supply", "in", "the", "apartments"],
+      "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["pool", "maintenance", "not", "done", "at", "vastral", "gymkhana", "and", "garbage", "dumped", "in", "open", "near", "the", "market"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["swimming", "pool", "closed", "at", "income", "tax", "colony", "while", "signal", "is", "stuck", "on", "red", "near", "the", "main", "road"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["pool", "water", "dirty", "near", "manav", "mandir", "and", "there", "is", "no", "lighting", "on", "road", "in", "the", "area"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+    },
+    {
+      "tokens": ["swimming", "pool", "not", "usable", "near", "civil", "hospital", "and", "dirty", "water", "from", "tap", "in", "bopal"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+    },
+    {
+      "tokens": ["pool", "hygiene", "issue", "at", "satellite", "club", "and", "the", "street", "light", "is", "broken", "near", "society", "gate"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+    },
+    {
+      "tokens": ["swimming", "pool", "maintenance", "not", "done", "near", "railway", "crossing", "and", "water", "pipe", "burst", "flowing", "on", "road"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+    },
+    {
+      "tokens": ["pool", "water", "dirty", "in", "vastrapur", "area", "and", "traffic", "lights", "are", "off", "near", "the", "school"],
+      "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+    },
+    
+      {
+        "tokens": ["sir", "street", "light", "not", "working", "near", "maninagar", "and", "the", "traffic", "signal", "is", "stuck", "on", "red", "near", "vastrapur", "lake"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["area", "in", "complete", "darkness", "outside", "bodakdev", "apartments", "and", "there", "is", "no", "water", "supply", "near", "iskcon", "circle"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["street", "lights", "off", "at", "night", "near", "paldi", "cross", "roads", "and", "garbage", "lying", "on", "road", "outside", "ms", "university"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["lamp", "post", "damaged", "near", "parul", "university", "gate", "and", "the", "swimming", "pool", "water", "is", "dirty", "at", "the", "club"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["no", "lighting", "on", "road", "near", "makarpura", "bus", "district", "and", "pipeline", "leakage", "at", "khodiyar", "nagar"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["open", "electric", "wires", "on", "pole", "near", "gokul", "dham", "society", "which", "is", "dangerous", "plus", "low", "water", "pressure", "in", "satellite"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["street", "light", "flickering", "near", "tulsi", "vatika", "and", "the", "junction", "signal", "is", "not", "working", "near", "shyamal", "circle"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["light", "pole", "fallen", "near", "naranpura", "post", "office", "and", "dirty", "water", "from", "tap", "in", "the", "same", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O", "O"]
+      },
+      {
+        "tokens": ["road", "light", "not", "working", "near", "thaltej", "metro", "station", "and", "garbage", "van", "not", "arrived", "in", "gota"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["street", "light", "broken", "near", "law", "garden", "and", "swimming", "pool", "closed", "at", "the", "sports", "complex"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["lamp", "post", "not", "working", "outside", "civil", "hospital", "and", "water", "flowing", "on", "road", "near", "prahlad", "nagar"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["street", "lights", "remain", "switched", "off", "near", "navrangpura", "bus", "stop", "and", "signal", "stuck", "on", "green", "at", "income", "tax"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["light", "pole", "not", "working", "near", "manav", "mandir", "and", "pool", "hygiene", "issue", "at", "vastral", "gymkhana"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["street", "light", "is", "off", "near", "the", "railway", "crossing", "and", "muddy", "water", "supply", "in", "bopal", "society"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["no", "lighting", "on", "road", "near", "school", "and", "garbage", "dumped", "in", "open", "near", "vastrapur", "lake"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["lamp", "post", "damaged", "near", "temple", "gate", "and", "traffic", "signal", "damaged", "at", "iskcon", "circle"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["street", "lights", "not", "working", "in", "entire", "bodakdev", "area", "and", "pool", "maintenance", "not", "done", "at", "club"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["sir", "light", "pole", "fallen", "near", "hospital", "and", "water", "pipe", "burst", "near", "paldi", "market"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["street", "light", "flickering", "outside", "building", "and", "signal", "timing", "incorrect", "near", "satellite"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["open", "electric", "wires", "on", "pole", "near", "market", "and", "no", "water", "supply", "in", "khodiyar", "nagar"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["too", "many", "stray", "dogs", "near", "maninagar", "and", "street", "light", "not", "working", "outside", "my", "society"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["dogs", "roaming", "aggressively", "near", "vastrapur", "lake", "and", "there", "is", "garbage", "lying", "on", "road", "at", "bodakdev"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["sir", "dog", "bite", "incident", "happened", "near", "iskcon", "circle", "plus", "no", "water", "supply", "in", "satellite", "area"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["stray", "dogs", "creating", "problem", "near", "paldi", "and", "the", "traffic", "signal", "is", "stuck", "on", "red", "near", "the", "market"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["need", "dog", "sterilization", "near", "parul", "university", "and", "swimming", "pool", "water", "is", "dirty", "at", "the", "stadium"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["too", "many", "stray", "dogs", "near", "ms", "university", "gate", "and", "street", "lights", "are", "off", "near", "railway", "crossing"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["dogs", "roaming", "aggressively", "near", "makarpura", "bus", "district", "and", "pipeline", "leakage", "is", "causing", "water", "to", "flow", "on", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["stray", "dogs", "creating", "problem", "near", "gokul", "dham", "society", "and", "lamp", "post", "is", "damaged", "near", "the", "temple"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["dog", "bite", "incident", "near", "khodiyar", "nagar", "while", "garbage", "van", "not", "arrived", "near", "the", "school"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["need", "dog", "sterilization", "near", "tulsi", "vatika", "and", "junction", "signal", "is", "not", "working", "near", "shyamal", "cross", "roads"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["too", "many", "stray", "dogs", "near", "naranpura", "post", "office", "and", "low", "water", "pressure", "in", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["dogs", "roaming", "aggressively", "near", "thaltej", "metro", "and", "the", "street", "light", "is", "flickering", "outside", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["stray", "dogs", "creating", "problem", "near", "gota", "and", "dirty", "water", "supply", "at", "income", "tax", "colony"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["sir", "there", "is", "a", "dog", "bite", "incident", "near", "law", "garden", "and", "pool", "hygiene", "issue", "at", "the", "club"],
+        "tags": ["O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["need", "dog", "sterilization", "near", "civil", "hospital", "and", "open", "electric", "wires", "on", "pole", "near", "the", "bus", "stop"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["too", "many", "stray", "dogs", "near", "prahlad", "nagar", "garden", "and", "signal", "timing", "incorrect", "near", "manav", "mandir"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["dogs", "roaming", "aggressively", "near", "navrangpura", "and", "dirty", "water", "from", "tap", "in", "bopal", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["stray", "dogs", "creating", "problem", "near", "vastral", "metro", "and", "no", "lighting", "on", "road", "near", "society", "gate"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["dog", "bite", "incident", "near", "kalupur", "station", "and", "the", "signal", "is", "blinking", "continuously", "near", "railway", "crossing"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["need", "dog", "sterilization", "at", "bodakdev", "club", "and", "swimming", "pool", "closed", "near", "vastrapur"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["stray", "cattle", "on", "road", "near", "maninagar", "cross", "roads", "and", "the", "traffic", "signal", "is", "not", "working", "properly"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["cows", "blocking", "traffic", "near", "vastrapur", "lake", "and", "there", "is", "no", "lighting", "on", "road", "outside", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["sir", "animals", "roaming", "freely", "near", "bodakdev", "and", "too", "many", "stray", "dogs", "creating", "problem", "in", "my", "area"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["cattle", "causing", "accidents", "near", "iskcon", "circle", "plus", "dirty", "water", "from", "tap", "in", "satellite", "society"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["stray", "cattle", "on", "road", "near", "paldi", "market", "and", "garbage", "lying", "on", "road", "outside", "ms", "university"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["cows", "blocking", "traffic", "near", "parul", "university", "and", "the", "street", "light", "pole", "is", "damaged", "at", "the", "gate"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["animals", "roaming", "freely", "near", "makarpura", "bus", "district", "and", "no", "water", "supply", "since", "morning", "in", "the", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["cattle", "causing", "accidents", "near", "gokul", "dham", "society", "and", "the", "swimming", "pool", "is", "closed", "at", "the", "club"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["stray", "cattle", "on", "road", "near", "khodiyar", "nagar", "while", "garbage", "van", "not", "arrived", "near", "the", "school"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["cows", "blocking", "traffic", "near", "tulsi", "vatika", "and", "junction", "signal", "is", "not", "working", "near", "shyamal", "circle"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["animals", "roaming", "freely", "near", "naranpura", "post", "office", "and", "low", "water", "pressure", "in", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["cattle", "causing", "accidents", "near", "thaltej", "metro", "and", "street", "light", "is", "flickering", "outside", "the", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["stray", "cattle", "on", "road", "near", "gota", "and", "dirty", "water", "supply", "at", "income", "tax", "colony"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["cows", "blocking", "traffic", "near", "law", "garden", "and", "pool", "hygiene", "issue", "reported", "at", "stadium"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["animals", "roaming", "freely", "near", "civil", "hospital", "and", "open", "electric", "wires", "on", "pole", "near", "bus", "stop"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["cattle", "causing", "accidents", "near", "prahlad", "nagar", "garden", "and", "signal", "timing", "incorrect", "near", "manav", "mandir"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["stray", "cattle", "on", "road", "near", "navrangpura", "and", "muddy", "water", "coming", "from", "tap", "in", "bopal"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["cows", "blocking", "traffic", "near", "vastral", "metro", "and", "lamp", "post", "not", "working", "outside", "society", "gate"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["animals", "roaming", "freely", "near", "kalupur", "station", "and", "pipeline", "leakage", "water", "flowing", "on", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["cattle", "causing", "accidents", "at", "night", "due", "to", "street", "lights", "being", "off", "near", "thaltej"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["sir", "storm", "water", "drain", "overflow", "near", "maninagar", "and", "cows", "blocking", "traffic", "on", "the", "main", "road"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["rain", "water", "logging", "near", "vastrapur", "lake", "and", "street", "lights", "not", "working", "outside", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["storm", "drain", "blocked", "at", "bodakdev", "plus", "dirty", "water", "from", "tap", "in", "the", "same", "society"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["flooding", "during", "rain", "near", "iskcon", "circle", "and", "the", "traffic", "signal", "is", "stuck", "on", "red"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["storm", "water", "drain", "overflow", "near", "paldi", "market", "causing", "stray", "cattle", "to", "block", "the", "entrance"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rain", "water", "logging", "near", "parul", "university", "gate", "and", "lamp", "post", "is", "damaged", "nearby"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["storm", "drain", "blocked", "near", "ms", "university", "and", "garbage", "lying", "on", "road", "for", "many", "days"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["flooding", "during", "rain", "at", "makarpura", "bus", "district", "and", "no", "water", "supply", "since", "morning"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["storm", "water", "drain", "overflow", "near", "gokul", "dham", "society", "and", "too", "many", "stray", "dogs", "roaming"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["rain", "water", "logging", "near", "khodiyar", "nagar", "while", "junction", "signal", "is", "not", "working"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["storm", "drain", "blocked", "near", "tulsi", "vatika", "and", "low", "water", "pressure", "at", "naranpura"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["flooding", "during", "rain", "near", "shyamal", "circle", "and", "street", "light", "flickering", "outside", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["storm", "water", "drain", "overflow", "at", "thaltej", "metro", "and", "pipeline", "leakage", "near", "the", "station"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rain", "water", "logging", "near", "gota", "and", "swimming", "pool", "hygiene", "issue", "at", "local", "club"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["storm", "drain", "blocked", "near", "law", "garden", "and", "animals", "roaming", "freely", "causing", "accidents"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["flooding", "during", "rain", "near", "civil", "hospital", "and", "street", "lights", "off", "at", "night"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["storm", "water", "drain", "overflow", "near", "prahlad", "nagar", "garden", "and", "signal", "timing", "incorrect"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["rain", "water", "logging", "near", "navrangpura", "bus", "stop", "and", "muddy", "water", "supply", "reported"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["storm", "drain", "blocked", "near", "vastral", "metro", "and", "open", "electric", "wires", "on", "pole"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["flooding", "during", "rain", "at", "income", "tax", "colony", "and", "stray", "cattle", "on", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["sir", "rrr", "van", "not", "arrived", "near", "maninagar", "and", "storm", "water", "drain", "overflow", "near", "the", "main", "road"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["collection", "van", "missed", "at", "vastrapur", "apartments", "and", "there", "is", "rain", "water", "logging", "outside", "the", "gate"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "waste", "not", "collected", "near", "bodakdev", "plus", "too", "many", "stray", "dogs", "roaming", "aggressively", "in", "the", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "van", "not", "arrived", "near", "iskcon", "circle", "and", "street", "lights", "are", "off", "near", "the", "temple"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["collection", "van", "missed", "near", "paldi", "market", "and", "dirty", "water", "from", "tap", "in", "the", "society"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "waste", "not", "collected", "near", "parul", "university", "while", "storm", "drain", "is", "blocked", "at", "the", "entrance"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "van", "not", "arrived", "near", "ms", "university", "and", "cows", "blocking", "traffic", "near", "the", "railway", "crossing"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["collection", "van", "missed", "near", "makarpura", "bus", "district", "and", "no", "water", "supply", "since", "last", "night"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["rrr", "waste", "not", "collected", "near", "gokul", "dham", "and", "lamp", "post", "is", "damaged", "near", "the", "park"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["sir", "rrr", "van", "not", "arrived", "near", "khodiyar", "nagar", "and", "traffic", "signal", "is", "not", "functioning", "nearby"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["collection", "van", "missed", "near", "tulsi", "vatika", "gate", "plus", "flooding", "during", "rain", "near", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "waste", "not", "collected", "at", "naranpura", "complex", "and", "low", "water", "pressure", "in", "the", "taps"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "van", "not", "arrived", "near", "shyamal", "circle", "and", "street", "light", "flickering", "outside", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["collection", "van", "missed", "near", "thaltej", "metro", "and", "pipeline", "leakage", "water", "flowing", "on", "the", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "waste", "not", "collected", "near", "gota", "and", "swimming", "pool", "water", "is", "dirty", "at", "the", "stadium"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["rrr", "van", "not", "arrived", "near", "law", "garden", "and", "stray", "cattle", "causing", "accidents", "on", "the", "street"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["collection", "van", "missed", "near", "civil", "hospital", "and", "open", "electric", "wires", "on", "pole", "nearby"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["rrr", "waste", "not", "collected", "near", "prahlad", "nagar", "garden", "and", "signal", "stuck", "on", "green"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["rrr", "van", "not", "arrived", "near", "navrangpura", "bus", "stop", "and", "dirty", "water", "supply", "reported", "locally"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["collection", "van", "missed", "at", "vastral", "metro", "and", "garbage", "van", "not", "arrived", "near", "the", "market"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "project", "incomplete", "near", "maninagar", "and", "the", "rrr", "van", "not", "arrived", "since", "yesterday", "morning"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["sir", "road", "construction", "delayed", "near", "vastrapur", "lake", "and", "cows", "blocking", "traffic", "outside", "the", "apartments"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "widening", "work", "pending", "near", "bodakdev", "plus", "the", "street", "lights", "are", "off", "in", "the", "entire", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["incomplete", "road", "project", "near", "iskcon", "circle", "causing", "storm", "water", "drain", "overflow", "during", "rains"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["road", "construction", "delayed", "at", "paldi", "market", "and", "collection", "van", "missed", "picking", "up", "garbage"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-COMP"]
+      },
+      {
+        "tokens": ["road", "widening", "work", "pending", "near", "parul", "university", "and", "low", "water", "pressure", "in", "the", "hostels"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "project", "incomplete", "outside", "ms", "university", "gate", "and", "too", "many", "stray", "dogs", "roaming", "nearby"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["road", "construction", "delayed", "near", "makarpura", "bus", "district", "and", "the", "traffic", "signal", "is", "not", "working"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["road", "widening", "work", "pending", "near", "gokul", "dham", "and", "pipeline", "leakage", "is", "wasting", "water", "on", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O", "B-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["incomplete", "road", "project", "near", "khodiyar", "nagar", "and", "the", "rrr", "waste", "not", "collected", "for", "three", "days"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["road", "construction", "delayed", "near", "tulsi", "vatika", "plus", "swimming", "pool", "water", "is", "dirty", "at", "the", "center"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "widening", "work", "pending", "at", "naranpura", "and", "lamp", "post", "is", "damaged", "near", "the", "post", "office"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["road", "project", "incomplete", "near", "shyamal", "circle", "causing", "rain", "water", "logging", "every", "time", "it", "rains"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "O", "O"]
+      },
+      {
+        "tokens": ["road", "construction", "delayed", "near", "thaltej", "metro", "and", "stray", "cattle", "causing", "accidents", "on", "the", "site"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O", "O", "O", "O"]
+      },
+      {
+        "tokens": ["road", "widening", "work", "pending", "near", "gota", "and", "garbage", "van", "not", "arrived", "at", "the", "society"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["incomplete", "road", "project", "near", "law", "garden", "while", "junction", "signal", "is", "stuck", "on", "red"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["road", "construction", "delayed", "near", "civil", "hospital", "and", "muddy", "water", "supply", "coming", "from", "taps"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["road", "widening", "work", "pending", "near", "prahlad", "nagar", "garden", "and", "rrr", "van", "not", "arrived", "today"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["road", "project", "incomplete", "near", "navrangpura", "bus", "stop", "and", "open", "electric", "wires", "on", "pole"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["road", "construction", "delayed", "at", "vastral", "and", "storm", "drain", "blocked", "due", "to", "the", "debris"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "O", "O"]
+      },
+      {
+        "tokens": ["sir", "there", "is", "a", "big", "pothole", "on", "road", "near", "maninagar", "and", "the", "street", "light", "is", "not", "working", "outside", "the", "society"],
+        "tags": ["O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["multiple", "potholes", "on", "road", "near", "vastrapur", "lake", "causing", "stray", "cattle", "to", "block", "traffic", "near", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O", "O", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "full", "of", "potholes", "near", "bodakdev", "and", "the", "road", "widening", "work", "is", "still", "pending", "in", "the", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "surface", "damaged", "near", "iskcon", "circle", "plus", "dirty", "water", "supply", "coming", "from", "tap", "in", "satellite"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["footpath", "damaged", "near", "paldi", "market", "and", "garbage", "lying", "on", "road", "outside", "ms", "university"],
+        "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["road", "is", "broken", "near", "parul", "university", "and", "the", "rrr", "van", "not", "arrived", "to", "collect", "waste"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["road", "condition", "very", "bad", "near", "makarpura", "bus", "district", "and", "the", "traffic", "signal", "is", "stuck", "on", "red"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["uneven", "road", "surface", "near", "gokul", "dham", "society", "and", "too", "many", "stray", "dogs", "roaming", "on", "the", "street"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "has", "cracks", "near", "khodiyar", "nagar", "while", "storm", "water", "drain", "is", "overflowing", "near", "the", "school"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["footpath", "encroached", "near", "tulsi", "vatika", "and", "low", "water", "pressure", "at", "naranpura", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["road", "sinking", "issue", "near", "shyamal", "cross", "roads", "and", "street", "light", "flickering", "outside", "the", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["dangerous", "road", "condition", "near", "thaltej", "metro", "and", "pipeline", "leakage", "water", "flowing", "on", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["road", "causing", "traffic", "jam", "near", "gota", "due", "to", "big", "pothole", "on", "road", "at", "the", "junction"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["road", "repair", "needed", "near", "law", "garden", "and", "the", "swimming", "pool", "maintenance", "is", "not", "done"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["multiple", "potholes", "on", "road", "near", "civil", "hospital", "and", "no", "water", "supply", "since", "last", "two", "days"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "O", "O"]
+      },
+      {
+        "tokens": ["footpath", "broken", "near", "prahlad", "nagar", "garden", "and", "junction", "signal", "is", "not", "functioning"],
+        "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["road", "full", "of", "potholes", "near", "navrangpura", "bus", "stop", "and", "open", "electric", "wires", "on", "pole"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["uneven", "road", "surface", "near", "vastral", "metro", "and", "muddy", "water", "coming", "from", "tap"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "I-COMP"]
+      },
+      {
+        "tokens": ["road", "is", "broken", "near", "kalupur", "station", "and", "storm", "drain", "blocked", "near", "the", "crossing"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["footpath", "encroached", "at", "income", "tax", "office", "and", "cows", "blocking", "traffic", "near", "the", "gate"],
+        "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["sir", "the", "smart", "city", "project", "issue", "near", "maninagar", "and", "there", "is", "a", "big", "pothole", "on", "road", "near", "the", "crossing"],
+        "tags": ["O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "work", "incomplete", "near", "vastrapur", "lake", "and", "street", "lights", "not", "working", "outside", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["problem", "with", "smart", "city", "service", "near", "bodakdev", "plus", "the", "traffic", "signal", "is", "stuck", "on", "red", "near", "the", "market"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "project", "issue", "at", "iskcon", "circle", "causing", "no", "water", "supply", "in", "satellite", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "work", "incomplete", "near", "paldi", "and", "garbage", "lying", "on", "road", "outside", "ms", "university"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+      },
+      {
+        "tokens": ["problem", "with", "smart", "city", "service", "near", "parul", "university", "and", "road", "is", "broken", "at", "the", "entrance"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "project", "issue", "near", "makarpura", "bus", "district", "and", "rrr", "van", "not", "arrived", "to", "collect", "waste"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["smart", "city", "work", "incomplete", "near", "gokul", "dham", "society", "while", "stray", "dogs", "creating", "problem", "on", "the", "street"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["problem", "with", "smart", "city", "service", "at", "khodiyar", "nagar", "and", "low", "water", "pressure", "near", "the", "school"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "project", "issue", "near", "tulsi", "vatika", "and", "junction", "signal", "is", "not", "working", "near", "shyamal"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "work", "incomplete", "at", "naranpura", "complex", "plus", "dirty", "water", "from", "tap", "in", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["problem", "with", "smart", "city", "service", "near", "thaltej", "metro", "and", "street", "light", "flickering", "outside", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "project", "issue", "near", "gota", "and", "pipeline", "leakage", "water", "flowing", "on", "the", "main", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "work", "incomplete", "near", "law", "garden", "causing", "storm", "water", "drain", "overflow", "during", "rain"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["problem", "with", "smart", "city", "service", "near", "civil", "hospital", "and", "garbage", "van", "not", "arrived", "today"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["smart", "city", "project", "issue", "near", "prahlad", "nagar", "garden", "and", "footpath", "is", "damaged", "nearby"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["smart", "city", "work", "incomplete", "near", "navrangpura", "bus", "stop", "and", "muddy", "water", "supply", "reported"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["problem", "with", "smart", "city", "service", "near", "vastral", "metro", "and", "open", "electric", "wires", "on", "pole"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["smart", "city", "project", "issue", "at", "income", "tax", "office", "and", "cows", "blocking", "traffic", "near", "gate"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["smart", "city", "work", "incomplete", "near", "vastrapur", "and", "swimming", "pool", "maintenance", "not", "done", "at", "the", "club"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["sir", "quick", "response", "team", "not", "arrived", "near", "maninagar", "and", "there", "is", "a", "serious", "accident", "occurred", "near", "the", "crossing"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "near", "vastrapur", "lake", "and", "the", "traffic", "signal", "is", "not", "working", "causing", "chaos"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "bodakdev", "plus", "the", "smart", "city", "work", "is", "incomplete", "blocking", "the", "way"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "at", "iskcon", "circle", "and", "street", "lights", "are", "off", "making", "it", "dangerous"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "paldi", "market", "where", "cows", "blocking", "traffic", "are", "causing", "accidents"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "near", "parul", "university", "gate", "while", "garbage", "is", "lying", "on", "road", "everywhere"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "ms", "university", "and", "there", "is", "no", "water", "supply", "in", "the", "area"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "near", "makarpura", "bus", "district", "and", "junction", "signal", "is", "stuck", "on", "red"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "gokul", "dham", "society", "where", "stray", "dogs", "are", "roaming", "aggressively"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "at", "khodiyar", "nagar", "plus", "pipeline", "leakage", "water", "flowing", "on", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "tulsi", "vatika", "and", "lamp", "post", "is", "damaged", "nearby"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "near", "naranpura", "post", "office", "and", "footpath", "is", "broken", "everywhere"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "shyamal", "circle", "during", "storm", "water", "drain", "overflow", "flooding"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "at", "thaltej", "metro", "and", "street", "light", "is", "flickering", "outside", "the", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "gota", "and", "rrr", "van", "not", "arrived", "to", "clear", "waste"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "near", "law", "garden", "while", "swimming", "pool", "is", "closed", "at", "club"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "civil", "hospital", "and", "dirty", "water", "supply", "is", "coming"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "I-COMP"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "near", "prahlad", "nagar", "garden", "and", "open", "electric", "wires", "on", "pole"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["quick", "response", "team", "not", "arrived", "near", "navrangpura", "bus", "stop", "and", "road", "repair", "is", "needed"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["qrt", "delay", "in", "emergency", "at", "vastral", "metro", "and", "there", "is", "a", "problem", "with", "smart", "city", "service"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["sir", "public", "toilet", "dirty", "near", "maninagar", "and", "the", "quick", "response", "team", "not", "arrived", "for", "the", "accident"],
+        "tags": ["O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["toilet", "not", "cleaned", "near", "vastrapur", "lake", "and", "street", "lights", "are", "off", "outside", "the", "apartments"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["public", "toilet", "unusable", "near", "bodakdev", "plus", "garbage", "lying", "on", "road", "near", "the", "market"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["toilet", "water", "not", "available", "at", "iskcon", "circle", "and", "there", "is", "no", "water", "supply", "in", "satellite"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["public", "toilet", "dirty", "near", "paldi", "market", "while", "stray", "cattle", "are", "blocking", "traffic", "nearby"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "I-COMP", "I-COMP", "O"]
+      },
+      {
+        "tokens": ["toilet", "not", "cleaned", "near", "parul", "university", "and", "the", "smart", "city", "work", "is", "incomplete"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "O", "I-COMP"]
+      },
+      {
+        "tokens": ["public", "toilet", "unusable", "near", "ms", "university", "gate", "and", "too", "many", "stray", "dogs", "roaming"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["toilet", "water", "not", "available", "near", "makarpura", "bus", "district", "and", "traffic", "signal", "is", "not", "functioning"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["public", "toilet", "dirty", "near", "gokul", "dham", "society", "and", "rrr", "van", "not", "arrived", "to", "collect", "waste"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["toilet", "not", "cleaned", "at", "khodiyar", "nagar", "plus", "low", "water", "pressure", "near", "the", "school"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["public", "toilet", "unusable", "near", "tulsi", "vatika", "and", "lamp", "post", "is", "damaged", "at", "the", "park"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["toilet", "water", "not", "available", "near", "naranpura", "post", "office", "and", "footpath", "is", "broken"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["public", "toilet", "dirty", "near", "shyamal", "circle", "causing", "bad", "smell", "and", "drain", "is", "overflowing"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "B-COMP", "O", "I-COMP"]
+      },
+      {
+        "tokens": ["toilet", "not", "cleaned", "at", "thaltej", "metro", "and", "street", "light", "flickering", "outside", "building"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+      },
+      {
+        "tokens": ["public", "toilet", "unusable", "near", "gota", "and", "pipeline", "leakage", "is", "wasting", "water", "on", "road"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "O", "O", "B-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["toilet", "water", "not", "available", "near", "law", "garden", "while", "swimming", "pool", "water", "is", "dirty"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["public", "toilet", "dirty", "outside", "civil", "hospital", "and", "the", "qrt", "delay", "is", "very", "concerning"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "O", "O", "O"]
+      },
+      {
+        "tokens": ["toilet", "not", "cleaned", "near", "prahlad", "nagar", "garden", "and", "signal", "stuck", "on", "red"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      {
+        "tokens": ["public", "toilet", "unusable", "near", "navrangpura", "bus", "stop", "and", "road", "repair", "is", "pending"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "I-COMP"]
+      },
+      {
+        "tokens": ["toilet", "water", "not", "available", "at", "vastral", "metro", "and", "garbage", "van", "not", "arrived"],
+        "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+      },
+      
+        {
+          "tokens": ["mosquito", "problem", "near", "maninagar", "and", "garbage", "not", "collected", "outside", "the", "public", "toilet"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC", "I-LOC"]
+        },
+        {
+          "tokens": ["park", "not", "maintained", "at", "vastrapur", "lake", "and", "people", "defecating", "in", "open", "near", "the", "gate"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["water", "logging", "during", "rain", "near", "bodakdev", "causing", "health", "hazard", "in", "area"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["hospital", "staff", "not", "responding", "near", "paldi", "while", "garbage", "is", "overflowing", "outside", "the", "dispensary"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "O", "I-COMP", "O", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["gas", "pipeline", "leakage", "near", "iskcon", "circle", "and", "mall", "parking", "fee", "too", "high", "at", "the", "square"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["illegal", "encroachment", "blocking", "road", "near", "parul", "university", "and", "park", "lights", "not", "working"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["open", "defecation", "happening", "near", "ms", "university", "causing", "spread", "of", "disease"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["garbage", "dumped", "in", "open", "near", "makarpura", "and", "drainage", "overflow", "during", "monsoon"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["poor", "hospital", "service", "near", "civil", "hospital", "and", "medicine", "not", "available", "at", "dispensary"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["gas", "line", "damaged", "near", "gokul", "dham", "and", "illegal", "parking", "charges", "at", "the", "mall"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["shop", "blocking", "road", "at", "satellite", "and", "broken", "benches", "in", "park", "near", "the", "temple"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["rain", "water", "entering", "houses", "near", "khodiyar", "nagar", "due", "to", "unclean", "locality"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["mosquito", "problem", "near", "tulsi", "vatika", "and", "garbage", "van", "not", "arrived", "for", "many", "days"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "O"]
+        },
+        {
+          "tokens": ["footpath", "encroached", "near", "naranpura", "and", "bad", "smell", "due", "to", "garbage", "lying", "on", "road"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["dispensary", "closed", "at", "shyamal", "and", "health", "hazard", "due", "to", "dirty", "surroundings"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "O", "O", "B-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["housing", "scheme", "allotment", "delay", "near", "thaltej", "and", "gas", "supply", "issue", "in", "apartments"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["garden", "dirty", "near", "gota", "and", "roads", "flooded", "in", "monsoon", "near", "the", "metro"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["illegal", "encroachment", "at", "law", "garden", "and", "waste", "overflowing", "from", "dustbin"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["park", "not", "maintained", "near", "prahlad", "nagar", "causing", "mosquito", "problem", "for", "residents"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O"]
+        },
+        {
+          "tokens": ["mall", "parking", "fee", "issue", "near", "navrangpura", "and", "garbage", "not", "collected", "regularly"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O"]
+        },
+        {
+          "tokens": ["people", "defecating", "in", "open", "near", "vastral", "metro", "and", "dirty", "water", "from", "tap"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["medicine", "not", "available", "near", "kalupur", "and", "hospital", "staff", "not", "responding"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["gas", "pipeline", "leakage", "at", "income", "tax", "colony", "and", "park", "lights", "not", "working"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["illegal", "encroachment", "on", "footpath", "near", "manav", "mandir", "causing", "traffic", "jam"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "O"]
+        },
+        {
+          "tokens": ["water", "logging", "during", "rain", "near", "railway", "crossing", "and", "dirty", "surroundings", "causing", "illness"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "B-COMP"]
+        },
+        {
+          "tokens": ["garbage", "not", "collected", "near", "bopal", "market", "and", "stray", "dogs", "creating", "problem"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["shop", "blocking", "road", "near", "society", "gate", "and", "park", "not", "maintained"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["mosquito", "problem", "at", "housing", "scheme", "near", "vastrapur", "and", "low", "water", "pressure"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["illegal", "parking", "charges", "at", "mall", "near", "iskcon", "and", "garbage", "lying", "on", "road"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["rain", "water", "entering", "houses", "near", "paldi", "and", "sewer", "line", "blocked"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["health", "hazard", "in", "area", "near", "bodakdev", "due", "to", "solid", "waste", "problem"],
+          "tags": ["B-COMP", "I-COMP", "O", "O", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["broken", "benches", "in", "park", "near", "parul", "university", "and", "street", "lights", "not", "working"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["gas", "line", "damaged", "near", "makarpura", "causing", "immediate", "emergency", "situation"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["garbage", "van", "not", "arrived", "at", "gokul", "dham", "society", "and", "mosquito", "problem", "is", "severe"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "O"]
+        },
+        {
+          "tokens": ["open", "defecation", "near", "khodiyar", "nagar", "causing", "hygiene", "issue", "and", "bad", "smell"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "O", "B-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["housing", "scheme", "application", "issue", "at", "satellite", "and", "medicine", "not", "available"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["illegal", "encroachment", "near", "tulsi", "vatika", "and", "monsoon", "water", "logging", "on", "road"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["park", "lights", "not", "working", "at", "naranpura", "while", "garbage", "collection", "missed"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["mall", "parking", "fee", "too", "high", "near", "shyamal", "and", "road", "is", "broken"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["poor", "hospital", "service", "at", "thaltej", "and", "gas", "pipeline", "leakage", "near", "metro"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["garbage", "dumped", "in", "open", "near", "gota", "causing", "spread", "of", "disease"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["illegal", "encroachment", "blocking", "footpath", "at", "law", "garden", "market"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+        },
+        {
+          "tokens": ["rain", "water", "logging", "near", "civil", "hospital", "and", "medicine", "not", "available"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["garden", "dirty", "near", "prahlad", "nagar", "and", "people", "defecating", "in", "open"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["garbage", "not", "collected", "near", "navrangpura", "and", "stray", "cattle", "on", "road"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["low", "water", "pressure", "at", "housing", "scheme", "near", "vastral"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "O", "B-LOC"]
+        },
+        {
+          "tokens": ["gas", "supply", "issue", "near", "kalupur", "and", "garbage", "lying", "on", "road"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["mall", "parking", "fee", "issue", "at", "income", "tax", "and", "road", "surface", "damaged"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["mosquito", "problem", "near", "manav", "mandir", "due", "to", "unclean", "locality"],
+          "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP"]
+        },
+        {
+          "tokens": ["roads", "flooded", "in", "monsoon", "near", "bopal", "and", "garbage", "van", "not", "arrived"],
+          "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+        },
+          {
+            "tokens": ["birth", "certificate", "issue", "near", "maninagar", "and", "the", "street", "lights", "not", "working", "outside"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+          },
+          {
+            "tokens": ["property", "tax", "rebate", "issue", "at", "vastrapur", "plus", "no", "water", "supply", "in", "the", "apartments"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "O", "B-LOC"]
+          },
+          {
+            "tokens": ["air", "pollution", "problem", "near", "bodakdev", "causing", "health", "hazard", "in", "the", "entire", "area"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "O", "O", "O", "B-LOC"]
+          },
+          {
+            "tokens": ["electronic", "waste", "disposal", "issue", "near", "iskcon", "circle", "and", "garbage", "lying", "on", "road"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["bus", "service", "delayed", "at", "paldi", "market", "and", "the", "traffic", "signal", "is", "not", "working"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["death", "certificate", "delay", "near", "parul", "university", "and", "low", "water", "pressure", "in", "taps"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "I-COMP"]
+          },
+          {
+            "tokens": ["e", "waste", "not", "collected", "near", "ms", "university", "while", "street", "light", "is", "flickering", "outside"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+          },
+          {
+            "tokens": ["assessment", "tax", "problem", "near", "makarpura", "and", "storm", "water", "drain", "is", "overflowing"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "I-COMP"]
+          },
+          {
+            "tokens": ["poor", "air", "quality", "near", "gokul", "dham", "society", "and", "too", "many", "stray", "dogs", "roaming"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["bus", "not", "stopping", "near", "khodiyar", "nagar", "and", "road", "is", "full", "of", "potholes"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["auditorium", "booking", "issue", "near", "tulsi", "vatika", "plus", "no", "lighting", "on", "the", "road"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "I-COMP"]
+          },
+          {
+            "tokens": ["crematorium", "not", "working", "near", "naranpura", "and", "garbage", "van", "not", "arrived", "today"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+          },
+          {
+            "tokens": ["budget", "improvement", "suggestion", "for", "shyamal", "area", "to", "fix", "broken", "footpath", "everywhere"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP", "O"]
+          },
+          {
+            "tokens": ["smoke", "in", "area", "near", "thaltej", "and", "pipeline", "leakage", "causing", "water", "shortage"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "O", "B-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["old", "electronics", "dumped", "near", "gota", "and", "stray", "cattle", "blocking", "the", "main", "highway"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC"]
+          },
+          {
+            "tokens": ["bus", "route", "issue", "near", "law", "garden", "and", "smart", "city", "work", "incomplete", "nearby"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "O"]
+          },
+          {
+            "tokens": ["record", "correction", "needed", "for", "birth", "certificate", "at", "civil", "hospital", "office"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC"]
+          },
+          {
+            "tokens": ["cremation", "facility", "issue", "near", "prahlad", "nagar", "and", "dirty", "water", "from", "tap"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["overcrowded", "bus", "near", "navrangpura", "bus", "stop", "and", "signal", "stuck", "on", "red"],
+            "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["auditorium", "maintenance", "problem", "near", "vastral", "and", "garbage", "dumped", "in", "open"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["suggestion", "for", "city", "budget", "at", "kalupur", "to", "improve", "public", "health", "services"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["assessment", "tax", "problem", "at", "income", "tax", "colony", "and", "drain", "is", "overflowing"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "I-LOC", "O", "B-COMP", "O", "I-COMP"]
+          },
+          {
+            "tokens": ["smoke", "in", "area", "near", "manav", "mandir", "causing", "poor", "air", "quality", "index"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["e", "waste", "not", "collected", "near", "bopal", "while", "stray", "dogs", "creating", "problem"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["birth", "certificate", "issue", "near", "society", "gate", "and", "street", "light", "not", "working"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["bus", "service", "delayed", "near", "vastrapur", "and", "muddy", "water", "coming", "from", "taps"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["property", "tax", "rebate", "issue", "at", "bodakdev", "plus", "low", "water", "pressure"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["auditorium", "booking", "issue", "near", "iskcon", "and", "cows", "blocking", "traffic", "nearby"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "O"]
+          },
+          {
+            "tokens": ["air", "pollution", "problem", "near", "paldi", "due", "to", "smoke", "in", "the", "surroundings"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP", "O", "O"]
+          },
+          {
+            "tokens": ["bus", "route", "issue", "at", "satellite", "and", "garbage", "van", "not", "arrived"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["death", "certificate", "delay", "near", "khodiyar", "nagar", "and", "pipeline", "leakage"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["crematorium", "not", "working", "near", "makarpura", "and", "road", "is", "broken"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["e", "waste", "disposal", "issue", "near", "gokul", "dham", "and", "open", "defecation", "happening"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["budget", "suggestion", "near", "tulsi", "vatika", "to", "improve", "street", "lighting"],
+            "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "O", "B-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["overcrowded", "bus", "near", "naranpura", "causing", "delay", "in", "daily", "life"],
+            "tags": ["B-COMP", "I-COMP", "O", "B-LOC", "O", "O", "O", "O", "O"]
+          },
+          {
+            "tokens": ["auditorium", "maintenance", "problem", "at", "shyamal", "and", "garbage", "not", "collected"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["poor", "air", "quality", "near", "thaltej", "and", "dirty", "water", "from", "tap"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["bus", "not", "stopping", "near", "gota", "and", "signal", "stuck", "on", "green"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["cremation", "facility", "issue", "at", "law", "garden", "and", "lamp", "post", "damaged"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["e", "waste", "not", "collected", "near", "civil", "hospital", "plus", "no", "water", "supply"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["auditorium", "booking", "issue", "near", "prahlad", "nagar", "and", "road", "repair", "needed"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["smoke", "in", "area", "near", "navrangpura", "causing", "mosquito", "problem"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["bus", "service", "delayed", "at", "vastral", "metro", "and", "garbage", "lying", "on", "road"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["assessment", "tax", "problem", "near", "kalupur", "and", "low", "water", "pressure"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["death", "certificate", "delay", "at", "income", "tax", "and", "sewer", "line", "blocked"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["crematorium", "not", "working", "near", "manav", "mandir", "and", "street", "lights", "off"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["e", "waste", "disposal", "issue", "near", "bopal", "and", "dirty", "surroundings"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "B-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["suggestion", "for", "city", "budget", "near", "vastrapur", "to", "fix", "drain", "overflow"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "O", "O", "B-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["air", "pollution", "problem", "near", "bodakdev", "market", "and", "garbage", "van", "not", "arrived"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP", "I-COMP"]
+          },
+          {
+            "tokens": ["bus", "route", "issue", "near", "iskcon", "gate", "and", "road", "surface", "damaged"],
+            "tags": ["B-COMP", "I-COMP", "I-COMP", "O", "B-LOC", "I-LOC", "O", "B-COMP", "I-COMP", "I-COMP"]
+          }
+        
+    
+]
