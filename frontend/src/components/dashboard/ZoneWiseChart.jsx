@@ -11,9 +11,9 @@ const ZoneWiseChart = ({ data }) => {
     ];
 
     return (
-        <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+        <div className="bg-surface p-6 rounded-3xl shadow-sm border border-white/10">
             <div className="flex items-center justify-between mb-6">
-                <h3 className="text-gray-800 text-lg font-bold">Zone-wise Complaints</h3>
+                <h3 className="text-white text-lg font-bold">Zone-wise Complaints</h3>
             </div>
 
             <div className="h-80 w-full">
@@ -29,7 +29,7 @@ const ZoneWiseChart = ({ data }) => {
                                 <stop offset="100%" stopColor="#818cf8" stopOpacity={0.8} />
                             </linearGradient>
                         </defs>
-                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#374151" />
                         <XAxis
                             dataKey="name"
                             axisLine={false}
@@ -43,11 +43,11 @@ const ZoneWiseChart = ({ data }) => {
                             tick={{ fill: '#9ca3af', fontSize: 12 }}
                         />
                         <Tooltip
-                            cursor={{ fill: '#f9fafb' }}
+                            cursor={{ fill: '#1f2937' }}
                             content={({ active, payload, label }) => {
                                 if (active && payload && payload.length) {
                                     return (
-                                        <div className="bg-gray-900 text-white text-sm py-2 px-3 rounded-lg shadow-xl">
+                                        <div className="bg-black text-white text-sm py-2 px-3 rounded-lg shadow-xl border border-white/10">
                                             <p className="font-medium mb-1">{label}</p>
                                             <p className="font-bold text-indigo-300">
                                                 {payload[0].value} Complaints

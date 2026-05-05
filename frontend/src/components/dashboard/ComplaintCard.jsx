@@ -6,15 +6,15 @@ const ComplaintCard = ({ complaint, onResolve }) => {
 
     const getSeverityColor = (severity) => {
         const sev = severity.toLowerCase();
-        if (sev === 'critical' || sev === 'high') return 'text-red-600 bg-red-50 border-red-200';
-        if (sev === 'medium') return 'text-orange-600 bg-orange-50 border-orange-200';
-        return 'text-green-600 bg-green-50 border-green-200';
+        if (sev === 'critical' || sev === 'high') return 'text-red-400 bg-red-500/10 border-red-500/20';
+        if (sev === 'medium') return 'text-orange-400 bg-orange-500/10 border-orange-500/20';
+        return 'text-green-400 bg-green-500/10 border-green-500/20';
     };
 
     const isHighPriority = complaint.severity.toLowerCase() === 'high' || complaint.severity.toLowerCase() === 'critical';
 
     return (
-        <div className={`bg-white border rounded-2xl p-5 hover:shadow-lg transition-all flex flex-col h-full group shadow-sm ${isResolved ? 'border-green-500/30' : (isHighPriority ? 'border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.15)]' : 'border-gray-200')
+        <div className={`bg-white/5 border rounded-2xl p-5 hover:bg-white/10 transition-all flex flex-col h-full group backdrop-blur-sm ${isResolved ? 'border-green-500/30' : (isHighPriority ? 'border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.15)]' : 'border-white/10')
             }`}>
             <div className="flex justify-between items-start mb-4">
                 <div className={`px-3 py-1 rounded-full text-xs font-medium border ${getSeverityColor(complaint.severity)}`}>
@@ -23,7 +23,7 @@ const ComplaintCard = ({ complaint, onResolve }) => {
                 <span className="text-xs text-muted font-mono">#{complaint.id}</span>
             </div>
 
-            <h3 className="text-lg font-bold text-gray-900 mb-2">{complaint.issueType}</h3>
+            <h3 className="text-lg font-bold text-white mb-2">{complaint.issueType}</h3>
             <p className="text-muted text-sm mb-4 line-clamp-2 flex-1">{complaint.description}</p>
 
             <div className="flex items-center gap-2 text-xs text-muted mb-2">

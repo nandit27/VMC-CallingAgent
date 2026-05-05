@@ -29,11 +29,9 @@ const LoginPage = () => {
                 throw new Error(data.detail || 'Login failed');
             }
 
-            // Store token (mock implementation for now)
             localStorage.setItem('token', data.token);
-            localStorage.setItem('user', JSON.stringify(data.user)); // Store user info
+            localStorage.setItem('user', JSON.stringify(data.user));
 
-            // Redirect to dashboard
             navigate('/dashboard');
         } catch (err) {
             setError(err.message);
@@ -43,15 +41,15 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 text-gray-900 font-sans">
-            <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+        <div className="min-h-screen flex items-center justify-center bg-background text-white font-sans">
+            <div className="w-full max-w-md bg-surface p-8 rounded-2xl shadow-xl border border-white/10">
                 <div className="text-center mb-8">
-                    <h1 className="text-3xl font-bold text-blue-600 mb-2">VMC Agent</h1>
-                    <p className="text-gray-500">Vadodara Municipal Corporation</p>
+                    <h1 className="text-3xl font-bold text-blue-400 mb-2">VMC Agent</h1>
+                    <p className="text-gray-400">Vadodara Municipal Corporation</p>
                 </div>
 
                 {error && (
-                    <div className="mb-6 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg flex items-center gap-2 text-sm">
+                    <div className="mb-6 bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-lg flex items-center gap-2 text-sm">
                         <AlertCircle size={18} />
                         <span>{error}</span>
                     </div>
@@ -59,14 +57,14 @@ const LoginPage = () => {
 
                 <form onSubmit={handleLogin} className="space-y-6">
                     <div className="space-y-2">
-                        <label className="block text-sm font-medium text-gray-700">Username</label>
+                        <label className="block text-sm font-medium text-gray-300">Username</label>
                         <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                            <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
                             <input
                                 type="text"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
+                                className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-white placeholder-gray-500"
                                 placeholder="Enter username"
                                 required
                             />
@@ -74,14 +72,14 @@ const LoginPage = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="block text-sm font-medium text-gray-700">Password</label>
+                        <label className="block text-sm font-medium text-gray-300">Password</label>
                         <div className="relative">
-                            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
                             <input
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
+                                className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-white placeholder-gray-500"
                                 placeholder="Enter password"
                                 required
                             />
@@ -91,7 +89,7 @@ const LoginPage = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-200 shadow-lg shadow-blue-200 disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-200 shadow-lg shadow-blue-900/30 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                         {loading ? (
                             <>
@@ -104,7 +102,7 @@ const LoginPage = () => {
                     </button>
                 </form>
 
-                <div className="mt-8 text-center text-xs text-gray-400">
+                <div className="mt-8 text-center text-xs text-gray-500">
                     &copy; {new Date().getFullYear()} VMC Calling Agent System
                 </div>
             </div>

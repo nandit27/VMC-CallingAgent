@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
-import StatsCard from '../components/dashboard/StatsCard';
-import ComplaintCard from '../components/dashboard/ComplaintCard';
-import DepartmentCard from '../components/dashboard/DepartmentCard';
+import { Phone, AlertCircle, CheckCircle, Loader2, BarChart3, Activity, ListTodo } from 'lucide-react';
+import { BentoGrid } from '../components/ui/bento-grid';
 import ActivityChart from '../components/dashboard/ActivityChart';
-import ZoneWiseChart from '../components/dashboard/ZoneWiseChart';
 import ComplaintProgress from '../components/dashboard/ComplaintProgress';
 import PriorityStats from '../components/dashboard/PriorityStats';
-
-
+import ComplaintCard from '../components/dashboard/ComplaintCard';
 // Map category codes to display names - Fallback only
 // The API now returns the name dynamically
 const CATEGORY_NAMES_FALLBACK = {
@@ -134,51 +130,60 @@ const Dashboard = () => {
         return cat ? cat.name : code;
     };
 
-    return (
-        <div className="flex flex-col gap-8 pb-8">
-            {/* Stats Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <StatsCard
-                    title="Total Complaints"
-                    value={stats.total}
-                    change={0}
-                    trend="neutral"
-                    icon={Phone}
-                    color="primary"
-                />
-                <StatsCard
-                    title="Pending Actions"
-                    value={stats.pending}
-                    change={0}
-                    trend="neutral"
-                    icon={AlertCircle}
-                    color="secondary"
-                />
-                <StatsCard
-                    title="Resolved"
-                    value={stats.resolved}
-                    change={0}
-                    trend="up"
-                    icon={CheckCircle}
-                    color="success"
-                />
-            </div>
-
-            {/* Priority Stats */}
-            <div className="mb-6">
-                <PriorityStats stats={stats.priorityBreakdown} />
-            </div>
-
-            {/* Charts & Analytics */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2 h-80">
+    // Prepare Bento Items
+    const bentoItems = [
+        {
+            title: "Total Complaints",
+            description: "All registered complaints",
+            icon: <Phone className="w-5 h-5 text-blue-500" />,
+            iconWrapperClass: "bg-blue-500/10",
+            status: stats.total,
+            statusClass: "bg-blue-500/10 text-blue-600",
+            tags: ["Overview"],
+            hasPersistentHover: true,
+        },
+        {
+            title: "Pending Actions",
+            description: "Complaints requiring attention",
+            icon: <AlertCircle className="w-5 h-5 text-orange-500" />,
+            iconWrapperClass: "bg-orange-500/10",
+            status: stats.pending,
+            statusClass: "bg-orange-500/10 text-orange-600",
+            tags: ["Action Required"],
+        },
+        {
+            title: "Resolved Issues",
+            description: "Successfully handled complaints",
+            icon: <CheckCircle className="w-5 h-5 text-emerald-500" />,
+            iconWrapperClass: "bg-emerald-500/10",
+            status: stats.resolved,
+            statusClass: "bg-emerald-500/10 text-emerald-600",
+            tags: ["Completed"],
+        },
+        {
+            title: "Activity & Trends",
+            description: "Complaint volume over time",
+            icon: <Activity className="w-5 h-5 text-purple-500" />,
+            iconWrapperClass: "bg-purple-500/10",
+            colSpan: 2,
+            content: (
+                <div className="h-64 mt-4 w-full">
                     <ActivityChart
                         data={stats.activityTrend || []}
                         period={chartPeriod}
                         onPeriodChange={setChartPeriod}
                     />
                 </div>
-                <div className="lg:col-span-1 h-80">
+            ),
+        },
+        {
+            title: "Complaint Progress",
+            description: "Resolution metrics",
+            icon: <BarChart3 className="w-5 h-5 text-indigo-500" />,
+            iconWrapperClass: "bg-indigo-500/10",
+            colSpan: 1,
+            content: (
+                <div className="h-64 mt-4 w-full">
                     <ComplaintProgress
                         total={stats.total}
                         resolved={stats.resolved}
@@ -186,94 +191,71 @@ const Dashboard = () => {
                         highPriority={stats.highPriority}
                     />
                 </div>
-            </div>
-
-
-
-
-
-            {/* Complaints Grid */}
-            <div>
-                <div className="flex justify-between items-center mb-6">
-                    <div className="flex items-center gap-4">
-                        <h2 className="text-2xl font-bold text-gray-900">
-                            {selectedCategory ? `${getCategoryName(selectedCategory)} Complaints` : 'Recent Complaints'}
-                        </h2>
+            ),
+        },
+        {
+            title: "Priority Overview",
+            description: "Current breakdown by urgency",
+            colSpan: 3,
+            content: (
+                <div className="mt-2 w-full">
+                    <PriorityStats stats={stats.priorityBreakdown} />
+                </div>
+            )
+        },
+        {
+            title: selectedCategory ? `${getCategoryName(selectedCategory)} Complaints` : 'Recent Complaints',
+            description: "Latest issues reported by citizens",
+            icon: <ListTodo className="w-5 h-5 text-rose-500" />,
+            iconWrapperClass: "bg-rose-500/10",
+            colSpan: 3,
+            content: (
+                <div className="mt-4">
+                    <div className="flex justify-end mb-4">
                         {selectedCategory && (
                             <button
                                 onClick={() => setSelectedCategory(null)}
-                                className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 px-3 py-1 rounded-full font-medium transition-colors"
+                                className="text-xs bg-white/10 hover:bg-white/20 text-gray-300 px-3 py-1 rounded-full font-medium transition-colors mr-2"
                             >
                                 Clear Filter ✕
                             </button>
                         )}
+                        <button
+                            onClick={() => fetchDashboardData(selectedCategory)}
+                            className="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1"
+                        >
+                            {loading && <Loader2 className="animate-spin" size={14} />}
+                            Refresh Data
+                        </button>
                     </div>
-
-                    <button
-                        onClick={() => fetchDashboardData(selectedCategory)}
-                        className="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1"
-                    >
-                        {loading && <Loader2 className="animate-spin" size={14} />}
-                        Refresh Data
-                    </button>
+                    {loading ? (
+                        <div className="flex items-center justify-center py-12">
+                            <Loader2 className="animate-spin text-blue-500" size={40} />
+                        </div>
+                    ) : complaints.length === 0 ? (
+                        <div className="text-center py-12 text-gray-500 bg-white/5 rounded-2xl border border-dashed border-white/10">
+                            <p className="font-medium">No complaints found</p>
+                            <p className="text-sm mt-1">{selectedCategory ? 'Try clearing the filter' : 'Waiting for new complaints'}</p>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {complaints.map(complaint => (
+                                <ComplaintCard
+                                    key={complaint.id}
+                                    complaint={complaint}
+                                    onResolve={handleResolve}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
+            )
+        }
+    ];
 
-                {loading ? (
-                    <div className="flex items-center justify-center py-12">
-                        <Loader2 className="animate-spin text-blue-500" size={40} />
-                    </div>
-                ) : complaints.length === 0 ? (
-                    <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
-                        <p className="font-medium">No complaints found</p>
-                        <p className="text-sm mt-1">{selectedCategory ? 'Try clearing the filter' : 'Waiting for new complaints'}</p>
-                    </div>
-                ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {complaints.map(complaint => (
-                            <ComplaintCard
-                                key={complaint.id}
-                                complaint={complaint}
-                                onResolve={handleResolve}
-                            />
-                        ))}
-                    </div>
-                )}
-            </div>
-
-            {/* Zone Wise Chart */}
-            <div className="mt-8">
-                {/* <ZoneWiseChart data={(() => {
-                    if (stats.by_zone) {
-                        // Use backend aggregated data
-                        return Object.keys(stats.by_zone).map(zoneKey => ({
-                            name: zoneKey,
-                            complaints: stats.by_zone[zoneKey]
-                        }));
-                    }
-
-                    // Fallback to client-side calc if backend data missing
-                    const zoneCounts = {
-                        'Zone North': 0,
-                        'Zone South': 0,
-                        'Zone East': 0,
-                        'Zone West': 0
-                    };
-
-                    complaints.forEach(c => {
-                        const loc = c.location.toLowerCase();
-                        if (loc.includes('north')) zoneCounts['Zone North']++;
-                        else if (loc.includes('south')) zoneCounts['Zone South']++;
-                        else if (loc.includes('east')) zoneCounts['Zone East']++;
-                        else if (loc.includes('west')) zoneCounts['Zone West']++;
-                        // Complaints without specific zone keywords are ignored for this specific chart
-                    });
-
-                    return Object.keys(zoneCounts).map(zone => ({
-                        name: zone,
-                        complaints: zoneCounts[zone]
-                    }));
-                })()} /> */}
-            </div>
+    return (
+        <div className="flex flex-col gap-8 pb-8 pt-4">
+            <BentoGrid items={bentoItems} className="max-w-7xl mx-auto w-full" />
         </div>
     );
 };

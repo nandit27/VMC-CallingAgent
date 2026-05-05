@@ -11,40 +11,40 @@ const PriorityStats = ({ stats }) => {
         {
             label: "Critical",
             count: stats.critical || 0,
-            color: "text-red-600",
-            bg: "bg-red-50",
-            border: "border-red-200",
+            color: "text-red-400",
+            bg: "bg-red-500/10",
+            border: "border-red-500/20",
             icon: AlertTriangle
         },
         {
             label: "High",
             count: stats.high || 0,
-            color: "text-orange-600",
-            bg: "bg-orange-50",
-            border: "border-orange-200",
+            color: "text-orange-400",
+            bg: "bg-orange-500/10",
+            border: "border-orange-500/20",
             icon: Zap
         },
         {
             label: "Medium",
             count: stats.medium || 0,
-            color: "text-blue-600",
-            bg: "bg-blue-50",
-            border: "border-blue-200",
+            color: "text-blue-400",
+            bg: "bg-blue-500/10",
+            border: "border-blue-500/20",
             icon: Info
         },
         {
             label: "Low",
             count: stats.low || 0,
-            color: "text-gray-600",
-            bg: "bg-gray-50",
-            border: "border-gray-200",
+            color: "text-gray-400",
+            bg: "bg-white/5",
+            border: "border-white/10",
             icon: CheckCircle
         }
     ];
 
     return (
-        <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
-            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <div className="w-full">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <AlertTriangle size={20} className="text-red-500" />
                 Priority Breakdown
             </h3>
@@ -55,7 +55,7 @@ const PriorityStats = ({ stats }) => {
                         key={idx}
                         className={`flex flex-col items-center justify-center p-4 rounded-2xl border ${item.bg} ${item.border} transition-transform hover:scale-[1.02]`}
                     >
-                        <div className={`p-2 rounded-full bg-white mb-2 shadow-sm ${item.color}`}>
+                        <div className={`p-2 rounded-full bg-white/10 mb-2 shadow-sm ${item.color}`}>
                             <item.icon size={20} />
                         </div>
                         <span className={`text-2xl font-bold ${item.color}`}>

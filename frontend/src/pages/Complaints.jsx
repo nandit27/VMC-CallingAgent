@@ -102,17 +102,17 @@ const Complaints = () => {
 
     return (
         <div className="pb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Complaint List</h1>
+            <h1 className="text-3xl font-bold text-white mb-6 text-center">Complaint List</h1>
 
             {/* Filter Banner */}
             {activeFilter && (
                 <div className="flex justify-center mb-6">
-                    <div className="bg-blue-50 text-blue-700 px-4 py-2 rounded-full flex items-center gap-2 border border-blue-100 shadow-sm">
+                    <div className="bg-blue-500/10 text-blue-400 px-4 py-2 rounded-full flex items-center gap-2 border border-blue-500/20 shadow-sm">
                         <Filter size={16} />
                         <span className="font-medium">Filtering by: <b>{activeFilter}</b></span>
                         <button
                             onClick={() => navigate('/complaints')}
-                            className="ml-2 p-1 hover:bg-blue-100 rounded-full transition-colors"
+                            className="ml-2 p-1 hover:bg-blue-500/20 rounded-full transition-colors"
                         >
                             <X size={16} />
                         </button>
@@ -122,17 +122,17 @@ const Complaints = () => {
 
             {/* Tabs */}
             <div className="flex justify-center mb-8">
-                <div className="bg-gray-100 p-1 rounded-xl flex gap-1">
+                <div className="bg-white/10 p-1 rounded-xl flex gap-1">
                     <button
                         onClick={() => setActiveTab('pending')}
-                        className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'pending' ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-500 hover:text-gray-900'
+                        className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'pending' ? 'bg-white/15 text-blue-400 shadow-sm' : 'text-gray-400 hover:text-white'
                             }`}
                     >
                         Pending ({pendingComplaints.length})
                     </button>
                     <button
                         onClick={() => setActiveTab('resolved')}
-                        className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'resolved' ? 'bg-white text-green-600 shadow-sm' : 'text-gray-500 hover:text-gray-900'
+                        className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'resolved' ? 'bg-white/15 text-green-400 shadow-sm' : 'text-gray-400 hover:text-white'
                             }`}
                     >
                         Resolved ({resolvedComplaints.length})

@@ -2,53 +2,36 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
-import LoginPage from './pages/LoginPage';
 import Departments from './pages/Departments';
 import Complaints from './pages/Complaints';
-
-// Protect Route Wrapper (Simple check for existence of token)
-const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('token');
-  if (!token) {
-    return <Navigate to="/" replace />;
-  }
-  return children;
-};
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
-              <Layout>
-                <Dashboard />
-              </Layout>
-            </ProtectedRoute>
+            <Layout>
+              <Dashboard />
+            </Layout>
           }
         />
         <Route
           path="/departments"
           element={
-            <ProtectedRoute>
-              <Layout>
-                <Departments />
-              </Layout>
-            </ProtectedRoute>
+            <Layout>
+              <Departments />
+            </Layout>
           }
         />
-
         <Route
           path="/complaints"
           element={
-            <ProtectedRoute>
-              <Layout>
-                <Complaints />
-              </Layout>
-            </ProtectedRoute>
+            <Layout>
+              <Complaints />
+            </Layout>
           }
         />
       </Routes>

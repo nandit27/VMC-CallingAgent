@@ -49,7 +49,7 @@ const Departments = () => {
 
     return (
         <div className="pb-8 relative">
-            <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">All Departments</h1>
+            <h1 className="text-3xl font-bold text-white mb-8 text-center">All Departments</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {departments.map((dept) => (
@@ -67,27 +67,27 @@ const Departments = () => {
             {/* Sub-Category Modal */}
             {selectedDept && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white rounded-3xl w-full max-w-lg shadow-2xl p-6 relative animate-in zoom-in-95 duration-200">
+                    <div className="bg-surface rounded-3xl w-full max-w-lg shadow-2xl p-6 relative animate-in zoom-in-95 duration-200 border border-white/10">
                         <button
                             onClick={() => setSelectedDept(null)}
-                            className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-500 hover:text-gray-900"
+                            className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-full transition-colors text-gray-400 hover:text-white"
                         >
                             <X size={24} />
                         </button>
 
                         <div className="text-center mb-6">
-                            <h2 className="text-2xl font-bold text-gray-900">{selectedDept.name}</h2>
-                            <p className="text-gray-500">{selectedDept.count} Total Complaints</p>
+                            <h2 className="text-2xl font-bold text-white">{selectedDept.name}</h2>
+                            <p className="text-gray-400">{selectedDept.count} Total Complaints</p>
                         </div>
 
                         <div className="space-y-2 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
-                            <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Categories</h3>
+                            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">Categories</h3>
                             {(() => {
                                 const categories = selectedDept.categories || [];
 
                                 if (categories.length === 0) {
                                     return (
-                                        <div className="text-center py-8 text-gray-400 bg-gray-50 rounded-xl border border-dashed">
+                                        <div className="text-center py-8 text-gray-400 bg-white/5 rounded-xl border border-dashed border-white/10">
                                             No categories found for this department.
                                         </div>
                                     );
@@ -97,10 +97,10 @@ const Departments = () => {
                                     <button
                                         key={idx}
                                         onClick={() => navigate(`/complaints?category=${encodeURIComponent(cat.tag)}`)}
-                                        className="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 transition-all flex justify-between items-center group"
+                                        className="w-full text-left p-4 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-400 transition-all flex justify-between items-center group"
                                     >
-                                        <span className="font-medium text-gray-700 group-hover:text-blue-700">{cat.name}</span>
-                                        <span className="text-gray-400 group-hover:text-blue-500">→</span>
+                                        <span className="font-medium text-gray-300 group-hover:text-blue-400">{cat.name}</span>
+                                        <span className="text-gray-500 group-hover:text-blue-400">→</span>
                                     </button>
                                 ));
                             })()}
